@@ -3,6 +3,7 @@ import "./NavBar.css";
 import axios from 'axios';
 import {getUserInfo} from '../../ducks/reducer';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class NavBar extends Component {
     constructor(props) {
@@ -17,9 +18,9 @@ class NavBar extends Component {
 
     render() {
         return (
-            <div className="navbar_wrapper">
+            <div className={this.props.background ? 'navbar_wrapper navbar_wrapper-background' : "navbar_wrapper"}>
                 <div className="navbar_left-div">
-                    <h1>StrangerCoffee</h1>
+                    <Link to="/"><h1>StrangerCoffee</h1></Link>
                 </div>
                 <div className="navbar_right-div">
                     {

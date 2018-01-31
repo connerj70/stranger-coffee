@@ -3,6 +3,7 @@ import './Home.css';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
 import InfoCard from '../../components/InfoCard/InfoCard';
 import Footer from '../../components/Footer/Footer';
+import NavBar from '../../components/NavBar/NavBar';
 
 export default class Home extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="home">
+                <NavBar background={false}/>
                 <div className="home_hero-container"></div>
                 <div className="home_hero-captions">
                     <h2>Strangers Become Friends</h2>
@@ -37,7 +39,7 @@ export default class Home extends Component {
                     />
                      <ReviewCard 
                     backgroundImage="https://www.planwallpaper.com/static/images/abstract-colourful-cool-wallpapers-55ec7905a6a4f.jpg" 
-                    stars={1}
+                    stars={5}
                     text="Had a great time with Jimmy!"
                     userImage="https://cdn2.f-cdn.com/files/download/24619452/natural+background.png"
                     userName="Johnny"

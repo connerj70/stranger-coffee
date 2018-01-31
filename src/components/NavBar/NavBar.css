@@ -9,6 +9,11 @@
     color: #fff;
 }
 
+.navbar_wrapper-background {
+    color: #fff;
+    background-color: var(--red);
+}
+
 .navbar_left-div {
     margin-left: 10px;
 }

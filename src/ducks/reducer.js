@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
-    user: {name: 'Conner Jensen'}
+    user: {id: 1, username: 'connerj70', name: 'Conner Jensen', city: 'Bountiful', state: "UT", bio: 'the best bio ever', hobby: 'coding', nickname: 'convict'}
 }
 
 const GET_USER_INFO = "GET_USER_INFO";
