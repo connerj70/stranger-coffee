@@ -17,7 +17,7 @@ export default class Home extends Component {
                     <h2>Strangers Become Friends</h2>
                     <h3>Discover friends while enjoying a great drink</h3>
                 </div>
-                <h3 id="home_review-card-container-heading">See What Friends Have Been Made</h3>
+                <h3 className="home_heading">See What Friendships Have Been Made</h3>
                 <div className="home_review-card-container">
                     <ReviewCard 
                     backgroundImage="https://www.planwallpaper.com/static/images/abstract-colourful-cool-wallpapers-55ec7905a6a4f.jpg" 
@@ -55,6 +55,8 @@ export default class Home extends Component {
                     userName="Johnny"
                     />
                 </div>
+
+                <h3 className="home_heading less_heading">Meet Amazing People</h3>
                
             </div>
         )
