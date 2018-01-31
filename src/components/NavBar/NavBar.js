@@ -1,28 +1,35 @@
 import React, {Component} from 'react';
 import "./NavBar.css";
+import axios from 'axios';
+import {getUserInfo} from '../../ducks/reducer';
+import {connect} from 'react-redux';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {};
     }
 
+    componentDidMount() {
+        this.props.getUserInfo();
+    }
+
     render() {
         return (
             <div className="navbar_wrapper">
                 <div className="navbar_left-div">
-                    <h3>StrangerCoffee</h3>
+                    <h1>StrangerCoffee</h1>
                 </div>
                 <div className="navbar_right-div">
                     {
-                    !this.state.user ? 
-                    <div>Login/Signup</div>
+                    !this.props.user.name ? 
+                    <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
                     :
                     <div className='navbar_flex'>
-                        <div>random1</div>
-                        <div>random2</div>
-                        <div>random3</div>
+                        <div>About</div>
+                        <div>Profile</div>
+                        <div>Browse</div>
                     </div>
                     }
                 </div>
@@ -30,3 +37,11 @@ export default class NavBar extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, {getUserInfo})(NavBar)

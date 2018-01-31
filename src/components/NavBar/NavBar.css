@@ -21,3 +21,7 @@
 .navbar_flex {
     display: flex;
 }
+
+.navbar_flex div {
+    margin-right: 10px;
+}
