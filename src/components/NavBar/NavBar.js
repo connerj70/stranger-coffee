@@ -15,9 +15,16 @@ export default class NavBar extends Component {
                     <h3>StrangerCoffee</h3>
                 </div>
                 <div className="navbar_right-div">
-                    <div>random1</div>
-                    <div>random2</div>
-                    <div>random3</div>
+                    {
+                    !this.state.user ? 
+                    <div>Login/Signup</div>
+                    :
+                    <div className='navbar_flex'>
+                        <div>random1</div>
+                        <div>random2</div>
+                        <div>random3</div>
+                    </div>
+                    }
                 </div>
             </div>
         )

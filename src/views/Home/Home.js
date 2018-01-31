@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './Home.css';
 import ReviewCard from '../../components/ReviewCard/ReviewCard';
+import InfoCard from '../../components/InfoCard/InfoCard';
+import Footer from '../../components/Footer/Footer';
 
 export default class Home extends Component {
     constructor(props) {
@@ -50,14 +52,20 @@ export default class Home extends Component {
                      <ReviewCard 
                     backgroundImage="https://www.planwallpaper.com/static/images/abstract-colourful-cool-wallpapers-55ec7905a6a4f.jpg" 
                     stars={4}
-                    text="Had a great time with Jimmy!"
+                    text="Had a great time with Jimmy! we went to the moveis and had coffee"
                     userImage="https://cdn2.f-cdn.com/files/download/24619452/natural+background.png"
                     userName="Johnny"
                     />
                 </div>
 
                 <h3 className="home_heading less_heading">Meet Amazing People</h3>
-               
+
+                <div className="home_info-card-container">
+                    <InfoCard icon={<i className="fa fa-users" aria-hidden="true"></i>} heading="Matching" text="We match you with other users and set up a time and place for you to meet"/>
+                    <InfoCard icon={<i class="fa fa-smile-o" aria-hidden="true"></i>} heading="Meet up" text="Help spread joy to others by sharing coffee and conversation"/>
+                    <InfoCard icon={<i class="fa fa-share-alt" aria-hidden="true"></i>} heading="Networking" text="Build your network by sharing your story and connecting with others"/>
+                </div>
+                <Footer />
             </div>
         )
     }
