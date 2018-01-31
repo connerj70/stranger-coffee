@@ -1,0 +1,19 @@
+.navbar_wrapper {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    z-index: 1;
+    color: #fff;
+}
+
+.navbar_left-div {
+    margin-left: 10px;
+}
+
+.navbar_right-div {
+    display: flex;
+    margin-right: 10px
+}
