@@ -7,12 +7,7 @@
     margin-right: 15px;
 }
 
-.review-card_wrapper>span {
-    margin-left: 10px;
-}
-
 #review-card-text {
-    margin-left: 10px;
     margin-top: 15px;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -29,6 +24,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    padding-left: 0;
 }
 
 .review-card_user-container>img {

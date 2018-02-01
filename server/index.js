@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false
 }));
 
 app.use(passport.initialize());
@@ -83,6 +83,7 @@ passport.serializeUser(function (id, done) {
     return done(null, id);
 })
 passport.deserializeUser(function (id, done) {
+    console.log(id);
     app.get('db').find_user([id])
         .then(user => {
             return done(null, user[0]);

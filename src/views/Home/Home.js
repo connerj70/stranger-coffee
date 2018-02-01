@@ -20,6 +20,7 @@ export default class Home extends Component {
                 <div className="home_hero-captions">
                     <h2>Strangers Become Friends</h2>
                     <h3>Discover friends while enjoying a great drink</h3>
+                    <a href={process.env.REACT_APP_LOGIN}><button className="home_join-now-button">JOIN NOW</button></a>
                 </div>
                 <h3 className="home_heading">See What Friendships Have Been Made</h3>
                 <div className="home_review-card-container">
