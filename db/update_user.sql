@@ -1,0 +1,1 @@
+update users set city = $1, state = $2, bio = $3, hobby= $4, nickname = $5 where id= $6;

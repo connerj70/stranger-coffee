@@ -28,9 +28,10 @@ class NavBar extends Component {
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
                     :
                     <div className='navbar_flex'>
+                        <div className="navbar_notification-div">1</div>
+                        <i class="fas fa-bell"></i>
                         <div>About</div>
-                        <div>Profile</div>
-                        <div>Browse</div>
+                        <Link to="/profile"><div>Profile</div></Link>
                     </div>
                     }
                 </div>

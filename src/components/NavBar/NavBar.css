@@ -30,3 +30,21 @@
 .navbar_flex div {
     margin-right: 10px;
 }
+
+.navbar_flex svg {
+    margin-right: 10px;
+    color: var(--dark-yellow);
+}
+
+.navbar_notification-div {
+    width:12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    position: relative;
+    left: 16px;
+    top: -5px;
+    font-size: 10px;
+    padding-top: 2px;
+    box-sizing: border-box;
+}

@@ -5,7 +5,8 @@ const express    = require('express'),
       massive    = require('massive'),
       session    = require('express-session'),
       passport = require('passport'),
-      Auth0Strategy = require('passport-auth0');
+      Auth0Strategy = require('passport-auth0'),
+      userCtrl      = require('./controllers/userController');
 
 const app = express();
 
@@ -78,6 +79,13 @@ app.get(`/auth/logout`, (req, res, next) => {
     req.logOut();
     res.redirect(302, `/`)
 })
+
+
+// MY ENDPOINTS
+
+app.put('/api/users', userCtrl.editUser);
+
+
 
 passport.serializeUser(function (id, done) {
     return done(null, id);
