@@ -8,7 +8,8 @@ const express    = require('express'),
       Auth0Strategy = require('passport-auth0'),
       userCtrl      = require('./controllers/userController'),
       matchCtrl     = require('./controllers/matchController'),
-      axios         = require('axios');
+      axios         = require('axios'),
+      notificationsCtrl = require('./controllers/notificationsCtrl');
 
 const app = express();
 
@@ -89,6 +90,7 @@ app.get(`/auth/logout`, (req, res, next) => {
 app.put('/api/users', userCtrl.editUser);
 app.post('/api/match', matchCtrl.newMatch);
 app.get('/api/match/:id', matchCtrl.getCurrentMatch);
+app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 
 
 passport.serializeUser(function (id, done) {

@@ -33,7 +33,9 @@ module.exports = {
                     var numberOfDaysToAdd = 6;
                     date.setDate(date.getDate() + numberOfDaysToAdd); 
                     db.create_match([id, id2, location, locationName, creationTime, date]).then(resp => {
-                        res.status(200).send(matchInfo);
+                        db.create_notification([id, id2, locationName, location, date]).then(resp2 => {
+                            res.status(200).send(matchInfo);
+                        });
                     });
                 });
             });

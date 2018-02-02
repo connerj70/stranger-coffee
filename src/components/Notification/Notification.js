@@ -12,17 +12,17 @@ class Notification extends Component {
     render() {
 
         console.log(this.props.notifications);
-        let notificationsToDisplay = this.props.notifications.map(value => {
-            return (
-                <Link to='/profile'><div className="notification_notification-container">
-                    <h1>MATCH</h1>
-                    <h2>Location: {value.location}</h2>
-                    <h2>Date: {value.date}</h2>
-                    <h2>Match: {value.name}</h2>
-                </div>
-                </Link>
-            )
-        })
+        // let notificationsToDisplay = this.props.notifications.map(value => {
+        //     return (
+        //         <Link to='/profile'><div className="notification_notification-container">
+        //             <h1>MATCH</h1>
+        //             <h2>Location: {value.location}</h2>
+        //             <h2>Date: {value.date}</h2>
+        //             <h2>Match: {value.name}</h2>
+        //         </div>
+        //         </Link>
+        //     )
+        // })
 
         return (
             <div className="notification">
@@ -30,7 +30,7 @@ class Notification extends Component {
                 this.props.open 
                 ? 
                 <div className="notification_inner-container">
-                    {notificationsToDisplay}
+                    {/* {notificationsToDisplay} */}
                 </div>
                 :
                 null

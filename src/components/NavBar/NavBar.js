@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./NavBar.css";
 import axios from 'axios';
-import {getUserInfo, getCurrentMatch} from '../../ducks/reducer';
+import {getUserInfo, getCurrentMatch, getNotifications} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Notification from '../Notification/Notification';
@@ -17,6 +17,7 @@ class NavBar extends Component {
     componentDidMount() {
         this.props.getUserInfo();
         this.props.getCurrentMatch(this.props.user.id);
+        this.props.getNotifications(this.props.user.id);
     }
 
     toggleOpen() {
@@ -28,13 +29,14 @@ class NavBar extends Component {
     }
 
     render() {
+        console.log(this.props.notifications);
         return (
             <div className={this.props.background ? 'navbar_wrapper navbar_wrapper-background' : "navbar_wrapper"}>
                 <div className="navbar_left-div">
                     <Link to="/"><h1>StrangerCoffee</h1></Link>
                 </div>
                 <div className="navbar_right-div">
-                    <Notification notifications={[this.props.currentMatch]} open={this.state.open}/>
+                    <Notification notifications={this.props.notifications} open={this.state.open}/>
                     {
                     !this.props.user.name ? 
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
@@ -69,4 +71,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {getUserInfo, getCurrentMatch})(NavBar)
+export default connect(mapStateToProps, {getUserInfo, getCurrentMatch, getNotifications})(NavBar)
