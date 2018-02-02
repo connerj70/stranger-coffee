@@ -4,17 +4,27 @@ import axios from 'axios';
 import {getUserInfo, getCurrentMatch} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import Notification from '../Notification/Notification';
+
 
 class NavBar extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {open: false};
     }
 
     componentDidMount() {
         this.props.getUserInfo();
         this.props.getCurrentMatch(this.props.user.id);
+    }
+
+    toggleOpen() {
+        this.setState((prevState) => {
+            return {
+                open: !prevState.open
+            };
+        }, ()=> console.log(this.state));
     }
 
     render() {
@@ -24,6 +34,7 @@ class NavBar extends Component {
                     <Link to="/"><h1>StrangerCoffee</h1></Link>
                 </div>
                 <div className="navbar_right-div">
+                    <Notification notifications={[this.props.currentMatch]} open={this.state.open}/>
                     {
                     !this.props.user.name ? 
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
@@ -38,7 +49,9 @@ class NavBar extends Component {
                             null
                         }
                         </div>
-                        <i className="fas fa-bell"></i>
+                        <div onClick={()=>this.toggleOpen()}>
+                            <i className="fas fa-bell"></i>
+                        </div>
                         <div>About</div>
                         <Link to="/profile"><div>Profile</div></Link>
                     </div>

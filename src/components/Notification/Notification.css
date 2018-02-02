@@ -1,0 +1,35 @@
+.notification_inner-container {
+    position: absolute;
+    left: 38%;
+    top: 5%;
+    width: 200px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: var(--blue);
+    z-index: 3;
+}
+
+.notification_notification-container {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: left;
+    align-items: left;
+}
+
+.notification_notification-container h2 {
+    text-align: left;
+    margin-top: 5px;
+    color: black;
+}
+
+.notification_notification-container h1 {
+    text-align: left;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 16px;
+}
