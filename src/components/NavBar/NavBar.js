@@ -29,13 +29,15 @@ class NavBar extends Component {
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
                     :
                     <div className='navbar_flex'>
-                        {/* {
+                        <div className="navbar_notification-div-container">
+                        {
                             this.props.currentMatch.location
-                            ? */}
+                            ?
                             <div className="navbar_notification-div">1</div>
-                            {/* :
+                             :
                             null
-                        } */}
+                        }
+                        </div>
                         <i className="fas fa-bell"></i>
                         <div>About</div>
                         <Link to="/profile"><div>Profile</div></Link>

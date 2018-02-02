@@ -42,9 +42,10 @@
     border-radius: 50%;
     background-color: var(--blue);
     position: relative;
-    left: 16px;
+    left: 27px;
     top: -5px;
     font-size: 10px;
     padding-top: 2px;
     box-sizing: border-box;
 }
+
