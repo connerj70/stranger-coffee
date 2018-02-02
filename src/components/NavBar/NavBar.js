@@ -14,12 +14,10 @@ class NavBar extends Component {
 
     componentDidMount() {
         this.props.getUserInfo();
-        console.log(this.props.id);
         this.props.getCurrentMatch(this.props.user.id);
     }
 
     render() {
-        console.log(this.props.currentMatch);
         return (
             <div className={this.props.background ? 'navbar_wrapper navbar_wrapper-background' : "navbar_wrapper"}>
                 <div className="navbar_left-div">
@@ -31,13 +29,13 @@ class NavBar extends Component {
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
                     :
                     <div className='navbar_flex'>
-                        {
-                            this.props.currentMatch.username
-                            ?
+                        {/* {
+                            this.props.currentMatch.location
+                            ? */}
                             <div className="navbar_notification-div">1</div>
-                            :
+                            {/* :
                             null
-                        }
+                        } */}
                         <i className="fas fa-bell"></i>
                         <div>About</div>
                         <Link to="/profile"><div>Profile</div></Link>
