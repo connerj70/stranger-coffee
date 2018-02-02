@@ -7,7 +7,8 @@ const express    = require('express'),
       passport = require('passport'),
       Auth0Strategy = require('passport-auth0'),
       userCtrl      = require('./controllers/userController'),
-      matchCtrl     = require('./controllers/matchController');
+      matchCtrl     = require('./controllers/matchController'),
+      axios         = require('axios');
 
 const app = express();
 

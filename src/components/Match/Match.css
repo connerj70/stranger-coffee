@@ -20,3 +20,37 @@
     box-shadow: 1px 2px 3px #d3d3d3;
     margin-top: 15px;
 }
+
+.match_matched-sub-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.match_matched h1 {
+    font-size: 25px;
+    color: var(--orange);
+    font-weight: 700;
+    text-shadow: 2px 2px #d3d3d3;
+}
+
+.match_matched-sub-container h3 {
+    margin-right: 15px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
+.match_matched-sub-container span {
+    margin-left: 20px;
+    text-align: left;
+}
+
+#match_matched-location {
+    margin-left: 0;
+}
+
+#match_matched-match {
+    margin-left: 17px;
+}
