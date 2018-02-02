@@ -67,7 +67,8 @@ class NavBar extends Component {
 function mapStateToProps(state) {
     return {
         user: state.user,
-        currentMatch: state.currentMatch
+        currentMatch: state.currentMatch,
+        notifications: state.notifications
     }
 }
 

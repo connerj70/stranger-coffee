@@ -46,9 +46,7 @@ module.exports = {
     getCurrentMatch: function(req, res, next) {
         const db = req.app.get('db');
         const id = parseInt(req.params.id);
-        console.log(id);
         db.get_match([id]).then(resp => {
-            console.log(resp);
             if(resp.length < 1) {
                 res.status(200).send([{username: ''}]);
             } else {

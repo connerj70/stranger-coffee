@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import "./Notification.css";
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {deleteNotification} from '../../ducks/reducer';
 
 class Notification extends Component {
     constructor(props) {
@@ -10,19 +12,24 @@ class Notification extends Component {
     }
 
     render() {
-
+        let notificationsToDisplay
         console.log(this.props.notifications);
-        // let notificationsToDisplay = this.props.notifications.map(value => {
-        //     return (
-        //         <Link to='/profile'><div className="notification_notification-container">
-        //             <h1>MATCH</h1>
-        //             <h2>Location: {value.location}</h2>
-        //             <h2>Date: {value.date}</h2>
-        //             <h2>Match: {value.name}</h2>
-        //         </div>
-        //         </Link>
-        //     )
-        // })
+        if(this.props.notifications) {
+        notificationsToDisplay = this.props.notifications.map((value,i) => {
+            console.log(value);
+            return (
+                <Link onClick={()=> this.props.deleteNotification(value.notification_id)} key={i} to='/profile'><div className="notification_notification-container">
+                    <h1>MATCH</h1>
+                    <h2>Location: {value.location}</h2>
+                    <h2>Date: {value.date}</h2>
+                    <h2>Match: {value.name}</h2>
+                </div>
+                </Link>
+            )
+        })
+        } else {
+            notificationsToDisplay = null;
+        }
 
         return (
             <div className="notification">
@@ -30,7 +37,7 @@ class Notification extends Component {
                 this.props.open 
                 ? 
                 <div className="notification_inner-container">
-                    {/* {notificationsToDisplay} */}
+                    {notificationsToDisplay}
                 </div>
                 :
                 null
@@ -40,4 +47,4 @@ class Notification extends Component {
     }
 }
 
-export default Notification;
+export default connect(null, {deleteNotification})(Notification);

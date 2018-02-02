@@ -8,6 +8,7 @@ const initialState = {
 const GET_USER_INFO = "GET_USER_INFO";
 const GET_CURRENT_MATCH = "GET_CURRENT_MATCH";
 const GET_NOTIFICATIONS = "GET_NOTIFICATIONS";
+const DELETE_NOTIFICATION = "DELETE_NOTIFICATION";
 
 export function getUserInfo() {
     const userData = axios.get('/auth/me')
@@ -37,13 +38,24 @@ export function getNotifications(id) {
     console.log("IDDDDDDDD",id);
     const notifications = axios.get(`/api/notifications/${id}`).then(resp => {
         console.log("RESPPPPPPP",resp);
-        return resp.data[0];
+        return resp.data;
     });
 
     return {
         type: GET_NOTIFICATIONS,
         payload: notifications
     }
+}
+
+export function deleteNotification(id) {
+    const notifications = axios.delete(`/api/notifications/${id}`).then(resp => {
+        return resp.data;
+    });
+
+    return {
+        type: DELETE_NOTIFICATION,
+        payload: notifications
+    };
 }
 
 export default function reducer(state=initialState, action) {
@@ -55,7 +67,10 @@ export default function reducer(state=initialState, action) {
             return Object.assign({}, state, {currentMatch: action.payload});
 
         case GET_NOTIFICATIONS + "_FULFILLED":
-            return Object.assign({}, state, {notifications: [...state.notifications, action.payload]});
+            return Object.assign({}, state, {notifications: [...state.notifications, ...action.payload]});
+
+        case DELETE_NOTIFICATION + "FULFILLED":
+            return Object.assign({}, state, {notifications: [...action.payload]});
         default:
             return state;
     }

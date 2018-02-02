@@ -91,6 +91,7 @@ app.put('/api/users', userCtrl.editUser);
 app.post('/api/match', matchCtrl.newMatch);
 app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
+app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);
 
 
 passport.serializeUser(function (id, done) {
