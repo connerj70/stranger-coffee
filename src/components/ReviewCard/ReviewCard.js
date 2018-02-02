@@ -15,12 +15,12 @@ export default class ReviewCard extends Component {
         let key = 1;
         var starsToDisplay = [];
         for(var i=0; i < this.props.stars; i++) {
-            starsToDisplay.push(<i key={key} className="fa fa-star" aria-hidden="true"></i>)
+            starsToDisplay.push(<i style={{color: "#F4D35E"}} className="fas fa-star" key={key}></i>)
             key++
         }
 
         while(starsToDisplay.length < 5) {
-            starsToDisplay.push(<i key={key} className="fa fa-star-o" aria-hidden="true"></i>)
+            starsToDisplay.push(<i key={key} className="far fa-star" style={{color: "#EBEBD3"}}></i>)
             key++
         }
 

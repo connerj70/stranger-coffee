@@ -86,3 +86,18 @@
     overflow-x: auto;
     margin-bottom: 130px;
 }
+
+.fa-users {
+    color: var(--blue);
+    font-size: 35px;
+}
+
+.fa-share-alt {
+    color: var(--blue);
+    font-size: 35px;
+}
+
+.fa-smile {
+    color: var(--blue);
+    font-size: 35px;
+}

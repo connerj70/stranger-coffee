@@ -65,7 +65,7 @@ export default class Home extends Component {
 
                 <div className="home_info-card-container">
                     <InfoCard icon={<i className="fa fa-users" aria-hidden="true"></i>} heading="Matching" text="We match you with other users and set up a time and place for you to meet"/>
-                    <InfoCard icon={<i className="fa fa-smile-o" aria-hidden="true"></i>} heading="Meet up" text="Help spread joy to others by sharing coffee and conversation"/>
+                    <InfoCard icon={<i class="far fa-smile"></i>} heading="Meet up" text="Help spread joy to others by sharing coffee and conversation"/>
                     <InfoCard icon={<i className="fa fa-share-alt" aria-hidden="true"></i>} heading="Networking" text="Build your network by sharing your story and connecting with others"/>
                 </div>
                 <Footer />

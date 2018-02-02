@@ -1,0 +1,22 @@
+.match {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    margin: 30px auto;
+    margin-bottom: 10px;
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 1px #d3d3d3;
+}
+
+.match_no-new-match button {
+    background-color: var(--blue);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #d3d3d3;
+    margin-top: 15px;
+}

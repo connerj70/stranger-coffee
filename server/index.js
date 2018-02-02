@@ -6,7 +6,8 @@ const express    = require('express'),
       session    = require('express-session'),
       passport = require('passport'),
       Auth0Strategy = require('passport-auth0'),
-      userCtrl      = require('./controllers/userController');
+      userCtrl      = require('./controllers/userController'),
+      matchCtrl     = require('./controllers/matchController');
 
 const app = express();
 
@@ -83,20 +84,21 @@ app.get(`/auth/logout`, (req, res, next) => {
 
 // MY ENDPOINTS
 
-app.put('/api/users', userCtrl.editUser);
 
+app.put('/api/users', userCtrl.editUser);
+app.post('/api/match', matchCtrl.newMatch);
 
 
 passport.serializeUser(function (id, done) {
     return done(null, id);
-})
+});
 passport.deserializeUser(function (id, done) {
     console.log(id);
     app.get('db').find_user([id])
         .then(user => {
             return done(null, user[0]);
         })
-})
+});
 
 app.listen(process.env.PORT, function() {
     console.log(`listening on port ${process.env.PORT}...`);

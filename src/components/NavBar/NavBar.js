@@ -29,7 +29,7 @@ class NavBar extends Component {
                     :
                     <div className='navbar_flex'>
                         <div className="navbar_notification-div">1</div>
-                        <i class="fas fa-bell"></i>
+                        <i className="fas fa-bell"></i>
                         <div>About</div>
                         <Link to="/profile"><div>Profile</div></Link>
                     </div>

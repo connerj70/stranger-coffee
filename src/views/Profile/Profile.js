@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import {connect} from 'react-redux';
 import {getUserInfo} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
+import Match from '../../components/Match/Match';
 
 class Profile extends Component {
     constructor(props) {
@@ -54,6 +55,7 @@ class Profile extends Component {
                     <div className="profile_button-container">
                         <Link to="/editprofile"><button className="profile_edit-button">EDIT</button></Link>
                     </div>
+                    <Match id={this.props.user.id} city={this.props.user.city}/>
                     <Footer />
                 </div>
                 :

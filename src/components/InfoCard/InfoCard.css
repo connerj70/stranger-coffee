@@ -27,3 +27,7 @@
 #info-card_text {
     white-space: normal;
 }
+
+.fa-blue-color {
+    color: var(--blue);
+}
