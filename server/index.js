@@ -88,6 +88,7 @@ app.get(`/auth/logout`, (req, res, next) => {
 
 app.put('/api/users', userCtrl.editUser);
 app.post('/api/match', matchCtrl.newMatch);
+app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 
 
 passport.serializeUser(function (id, done) {

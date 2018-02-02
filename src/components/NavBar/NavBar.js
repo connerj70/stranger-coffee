@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./NavBar.css";
 import axios from 'axios';
-import {getUserInfo} from '../../ducks/reducer';
+import {getUserInfo, getCurrentMatch} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
@@ -14,9 +14,12 @@ class NavBar extends Component {
 
     componentDidMount() {
         this.props.getUserInfo();
+        console.log(this.props.id);
+        this.props.getCurrentMatch(this.props.user.id);
     }
 
     render() {
+        console.log(this.props.currentMatch);
         return (
             <div className={this.props.background ? 'navbar_wrapper navbar_wrapper-background' : "navbar_wrapper"}>
                 <div className="navbar_left-div">
@@ -28,7 +31,13 @@ class NavBar extends Component {
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
                     :
                     <div className='navbar_flex'>
-                        <div className="navbar_notification-div">1</div>
+                        {
+                            this.props.currentMatch.username
+                            ?
+                            <div className="navbar_notification-div">1</div>
+                            :
+                            null
+                        }
                         <i className="fas fa-bell"></i>
                         <div>About</div>
                         <Link to="/profile"><div>Profile</div></Link>
@@ -42,8 +51,9 @@ class NavBar extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.user
+        user: state.user,
+        currentMatch: state.currentMatch
     }
 }
 
-export default connect(mapStateToProps, {getUserInfo})(NavBar)
+export default connect(mapStateToProps, {getUserInfo, getCurrentMatch})(NavBar)

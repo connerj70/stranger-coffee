@@ -52,5 +52,9 @@
 }
 
 #match_matched-match {
-    margin-left: 17px;
+    margin-left: 13px;
+}
+
+#match_matched-date {
+    margin-left: 23px;
 }
