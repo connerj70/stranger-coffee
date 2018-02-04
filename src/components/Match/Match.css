@@ -42,7 +42,7 @@
     font-size: 25px;
     color: var(--orange);
     font-weight: 700;
-    text-shadow: 2px 2px #d3d3d3;
+    text-shadow: 1px 1px #d3d3d3;
 }
 
 .match_matched-sub-container h3 {

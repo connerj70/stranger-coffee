@@ -13,7 +13,6 @@ class Match extends Component {
 
     componentDidMount() {
         this.props.getCurrentMatch(this.props.id).then(resp => {
-            console.log(resp);
             this.setState({
                 match: resp.value
             });
@@ -25,11 +24,12 @@ class Match extends Component {
             this.setState({
                 match: resp.data
             });
+        }).catch(err => {
+            alert('Sorry no matches available in your area');
         });
     }
 
     handleAccept() {
-        console.log('clicked');
         axios.put(`/api/match/${this.state.match.match_id}`).then(resp => {
             let tempMatch = Object.assign({},this.state.match);
             tempMatch.pending = false;

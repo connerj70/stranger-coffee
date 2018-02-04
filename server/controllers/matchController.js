@@ -25,7 +25,8 @@ module.exports = {
                     let matchInfo = {
                         location_name: locationName,
                         location,
-                        username: matchedUser.username
+                        username: matchedUser.username,
+                        pending: true
                     };
                     let id2 = parseInt(matchedUser.id);
                     var date = new Date();
@@ -36,12 +37,12 @@ module.exports = {
                         db.create_notification([id, id2, locationName, location, date]).then(resp2 => {
                             res.status(200).send(matchInfo);
                         });
+                    }).catch(err => {
+                        res.status(500).send(err);
                     });
                 });
             });
         });
-       
-       
     },
     getCurrentMatch: function(req, res, next) {
         const db = req.app.get('db');
@@ -58,7 +59,6 @@ module.exports = {
         const db = req.app.get('db');
         const id = parseInt(req.params.id);
         db.update_match_pending([id]).then(resp => {
-            console.log(resp);
             res.status(200).send(resp);
         });
     }
