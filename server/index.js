@@ -89,6 +89,7 @@ app.get(`/auth/logout`, (req, res, next) => {
 
 app.put('/api/users', userCtrl.editUser);
 app.post('/api/match', matchCtrl.newMatch);
+app.put('/api/match/:id', matchCtrl.updateMatchPending);
 app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);

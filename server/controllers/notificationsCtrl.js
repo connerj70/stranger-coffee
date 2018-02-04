@@ -10,7 +10,9 @@ module.exports = {
         });
     },
     deleteNotification: function(req, res, next) {
-        db.delete_notification([req.params.id]).then(resp => {
+        const db = req.app.get('db');
+        const id = parseInt(req.params.id);
+        db.delete_notification([id]).then(resp => {
             res.status(200).send(resp);
         });
     }

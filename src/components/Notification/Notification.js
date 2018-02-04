@@ -13,7 +13,6 @@ class Notification extends Component {
 
     render() {
         let notificationsToDisplay
-        console.log(this.props.notifications);
         if(this.props.notifications) {
         notificationsToDisplay = this.props.notifications.map((value,i) => {
             console.log(value);
@@ -28,7 +27,7 @@ class Notification extends Component {
             )
         })
         } else {
-            notificationsToDisplay = null;
+            notificationsToDisplay = <div className="notification_notification-container"></div>;
         }
 
         return (

@@ -32,7 +32,7 @@ module.exports = {
                     var creationTime = new Date();
                     var numberOfDaysToAdd = 6;
                     date.setDate(date.getDate() + numberOfDaysToAdd); 
-                    db.create_match([id, id2, location, locationName, creationTime, date]).then(resp => {
+                    db.create_match([id, id2, location, locationName, creationTime, date, true]).then(resp => {
                         db.create_notification([id, id2, locationName, location, date]).then(resp2 => {
                             res.status(200).send(matchInfo);
                         });
@@ -52,6 +52,14 @@ module.exports = {
             } else {
             res.status(200).send(resp);
             }
+        });
+    },
+    updateMatchPending: function(req, res, next) {
+        const db = req.app.get('db');
+        const id = parseInt(req.params.id);
+        db.update_match_pending([id]).then(resp => {
+            console.log(resp);
+            res.status(200).send(resp);
         });
     }
 };

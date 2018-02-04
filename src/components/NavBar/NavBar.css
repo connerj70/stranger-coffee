@@ -49,3 +49,16 @@
     box-sizing: border-box;
 }
 
+.fa-bell {
+    animation: shake 1s infinite linear;
+}
+
+@keyframes shake {
+    from {
+        transform: translateZ(0deg);
+    }
+    to {
+        transform: translateZ(100deg);
+    }
+}
+

@@ -44,7 +44,7 @@ class NavBar extends Component {
                     <div className='navbar_flex'>
                         <div className="navbar_notification-div-container">
                         {
-                            this.props.currentMatch.location
+                            this.props.notifications.length
                             ?
                             <div className="navbar_notification-div">1</div>
                              :
