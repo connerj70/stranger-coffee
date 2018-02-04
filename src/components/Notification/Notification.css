@@ -3,6 +3,7 @@
     left: 38%;
     top: 5%;
     width: 200px;
+    min-height: 250px;
     background-color: whitesmoke;
     border-radius: 5px;
     color: var(--blue);

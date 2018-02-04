@@ -1,0 +1,1 @@
+SELECT * from matches where DATE_PART('day', date::timestamp - creation_time::timestamp) < 3;

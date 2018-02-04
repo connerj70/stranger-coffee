@@ -94,6 +94,13 @@ app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);
 
+setInterval(function() {
+    const db = app.get('db');
+    db.select_upcoming_matches().then(resp => {
+        console.log(resp);
+    });
+}, 4.32e+7);
+
 
 passport.serializeUser(function (id, done) {
     return done(null, id);
