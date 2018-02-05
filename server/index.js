@@ -56,6 +56,7 @@ passport.use(new Auth0Strategy({
                 profile.name,
                 profile.identities[0].user_id,
                 profile.picture,
+                profile.email
             ])
                 .then(user => {
                     db.find_user([String(user[0].auth_id)])
@@ -94,12 +95,19 @@ app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);
 
+//
+
 setInterval(function() {
+    console.log('fired');
     const db = app.get('db');
     db.select_upcoming_matches().then(resp => {
-        console.log(resp);
+        for(let i=0; i < resp.length; i++) {
+            db.create_notification([resp[i].user1_id, resp[i].user2_id, resp[i].location_name, resp[i].location, resp[i].date]).then(resp => {
+                console.log(resp);
+            });
+        }
     });
-}, 4.32e+7);
+}, 8.64e+7);
 
 
 passport.serializeUser(function (id, done) {

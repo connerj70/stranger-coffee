@@ -1,13 +1,14 @@
 .notification_inner-container {
     position: absolute;
     left: 38%;
-    top: 5%;
+    top: 6%;
     width: 200px;
     min-height: 250px;
     background-color: whitesmoke;
     border-radius: 5px;
     color: var(--blue);
     z-index: 5;
+    box-shadow: 1px 1px 4px grey;
 }
 
 .notification_notification-container {

@@ -20,4 +20,9 @@ a {
   cursor: pointer;
 }
 
+button:focus {
+  outline: none;
+  border: none
+}
+
 

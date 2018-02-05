@@ -1,6 +1,46 @@
 .create-review {
-    width: 80%;
+    width: 100%;
     height: 200px;
-    background-color: red;
+}
+
+.create-review_input-container {
+    margin-top: 30px;
+}
+
+.create-review_input-container h1 {
     margin: 0 auto;
+    width: 70%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.create-review_input-container div {
+    margin: 0 auto;
+    background-color: #d3d3d3;
+}
+
+.create-review_input-container input {
+    background-color: var(--orange);
+    width: 70%;
+}
+
+.create-review_input-container textarea {
+    background-color: var(--orange);
+    width: 70%;
+}
+
+select {
+    width: 268px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 5px;
+    height: 34px;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
+    -webkit-appearance: none;
+    background-position-x: 244px;
+    background-color: var(--orange);
 }

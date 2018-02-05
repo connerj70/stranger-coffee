@@ -1,2 +1,2 @@
-insert into users(username, name, auth_id, profile_pic)
-values($1, $2, $3, $4);
+insert into users(username, name, auth_id, profile_pic, email)
+values($1, $2, $3, $4, $5);

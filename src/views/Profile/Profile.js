@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import {getUserInfo} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import Match from '../../components/Match/Match';
-import CreateReview from '../../components/createReview/createReview';
 
 class Profile extends Component {
     constructor(props) {
@@ -59,7 +58,7 @@ class Profile extends Component {
                         </div>
                     </div>
                     <Match id={this.props.user.id} city={this.props.user.city}/>
-                    <CreateReview />
+                    <Link to="/createreview"><button id="profile_review-match-button">Review Last Match</button></Link>
                     <Footer />
                 </div>
                 :

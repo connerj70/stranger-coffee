@@ -1,9 +1,6 @@
 .profile_card-and-button-container {
-    border: 1px solid #d3d3d3;
-    padding: 5px;
-    width: 95%;
+    width: 100%;
     margin: 20px auto;
-    box-shadow: 1px 2px 3px #d3d3d3;
 }
 
 .profile_card {
@@ -76,5 +73,15 @@
 
 .profile_edit-button:active {
     transform: scale(0.95, 0.95)
+}
+
+#profile_review-match-button {
+    border: 1px solid var(--orange);
+    background-color: var(--orange);
+    color: #fff;
+    padding: 12px 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px#d3d3d3;
 }
 
