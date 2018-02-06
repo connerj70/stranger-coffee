@@ -25,11 +25,10 @@ class NavBar extends Component {
             return {
                 open: !prevState.open
             };
-        }, ()=> console.log(this.state));
+        });
     }
 
     render() {
-        console.log(this.props.notifications);
         return (
             <div className={this.props.background ? 'navbar_wrapper navbar_wrapper-background' : "navbar_wrapper"}>
                 <div className="navbar_left-div">

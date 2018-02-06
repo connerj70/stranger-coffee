@@ -39,11 +39,15 @@ class Match extends Component {
         });
     }
 
+    deleteMatch() {
+        console.log('deleteMatch triggered');
+    }
+
     render() {
         console.log(this.state.match)
         return (
             <div className="match">
-            <span className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
+           
             {
                 !this.state.match.location
                 ?
@@ -53,6 +57,7 @@ class Match extends Component {
                 </div>
                 :
                 <div className="match_matched">
+                     <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
                     {
                         this.state.match.user2_id === this.props.user.id 
                         ?

@@ -15,7 +15,7 @@ const express    = require('express'),
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser({limit: '50mb'}));
 
 app.use(session({
     secret: process.env.SECRET,
@@ -97,6 +97,7 @@ app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);
 app.post('/api/newreview', reviewCtrl.uploadImage);
+app.post('/api/createreview', reviewCtrl.createReview);
 //
 
 setInterval(function() {
@@ -108,6 +109,9 @@ setInterval(function() {
                 console.log(resp);
             });
         }
+    });
+    db.check_expired_matches().then(resp => {
+        console.log(resp);
     });
 }, 8.64e+7);
 
