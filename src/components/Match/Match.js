@@ -43,6 +43,7 @@ class Match extends Component {
         console.log(this.state.match)
         return (
             <div className="match">
+            <span className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
             {
                 !this.state.match.location
                 ?

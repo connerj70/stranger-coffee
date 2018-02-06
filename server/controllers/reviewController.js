@@ -1,28 +1,26 @@
-const aws = require('aws-sdk');
+require('dotenv').config();
+const AWS = require('aws-sdk');
 
-aws.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-});
+AWS.config.update({ region: 'us-west-1'});
+
+s3 = new AWS.S3({apiVersion: '2006-03-01'});
+
+
+
 
 module.exports = {
-    sign: function(filename, filetype) {
-        var s3 = new aws.S3();
+    uploadImage: function(req, res, next) {
+        console.log(req.body.name);
+        console.log(req.body.preview);
+        console.log('reviewController hit!');
+        var uploadParams = {Bucket: "s3-us-west-1.amazonaws.com/stranger-coffee/review-images", Key: req.body.name, Body: req.body.preview};
 
-        var params = {
-            Bucket: SOME_BUCKET,
-            Key: filename,
-            Expires: 60,
-            ContentType: filetype
-        };
-
-        s3.getSignedUrl('pubObject', params, function(err, data) {
+        s3.upload (uploadParams, function (err, data) {
             if (err) {
-                console.log(err);
-                return err;
-            } else {
-                return data;
+              console.log("Error", err);
+            } if (data) {
+              console.log("Upload Success", data.Location);
             }
-        });
+          });
     }
 };

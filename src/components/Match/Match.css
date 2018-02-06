@@ -28,6 +28,16 @@
     margin-top: 10px;
 }
 
+.match_cancel-match {
+    position: relative;
+    top: -69px;
+    left: 90%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--red);
+}
+
 .match_accept-span {
     padding: 4px 6px;
     border-radius: 5px;

@@ -96,7 +96,7 @@ app.put('/api/match/:id', matchCtrl.updateMatchPending);
 app.get('/api/match/:id', matchCtrl.getCurrentMatch);
 app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);
-
+app.post('/api/newreview', reviewCtrl.uploadImage);
 //
 
 setInterval(function() {

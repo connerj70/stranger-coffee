@@ -21,14 +21,18 @@
     background-color: #d3d3d3;
 }
 
-.create-review_input-container input {
-    background-color: #d3d3d3;
-    width: 70%;
-}
-
 .create-review_input-container textarea {
     background-color: #d3d3d3;
     width: 70%;
+    border: none;
+    font-size: 14px;
+    padding: 10px;
+    resize: none;
+}
+
+.create-review_input-container textarea:focus {
+    border: 2px solid var(--orange);
+    outline: none;
 }
 
 select {

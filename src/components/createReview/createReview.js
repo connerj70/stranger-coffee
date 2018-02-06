@@ -3,12 +3,14 @@ import {connect} from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 import Dropzone from 'react-dropzone';
 import './createReview.css';
+import axios from 'axios';
+import Button from '../../reuse/buttons';
 
 class createReview extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {review: "", stars: 0};
+        this.state = {review: "", stars: 0, imageUrls: []};
 
     }
 
@@ -31,8 +33,9 @@ class createReview extends Component {
     onDrop(files) {
         console.log('dropped!');
         console.log(files);
-        
-
+        axios.post('/api/newreview', {name: files[0].name, preview: files[0].preview }).then(resp => {
+            console.log(resp);
+        });
     }
 
     render() {
@@ -42,7 +45,7 @@ class createReview extends Component {
                 <NavBar background={true}/>
                 <div className="create-review_input-container">
                     <h1>Review: </h1>
-                    <textarea rows="12" name="review" onChange={(e) => this.handleChange(e)} type="text"/>
+                    <textarea placeholder="Write your review here..." rows="12" name="review" onChange={(e) => this.handleChange(e)} type="text"/>
                 </div>
                 <div className="create-review_input-container">
                     <h1>Stars: </h1>
@@ -56,8 +59,9 @@ class createReview extends Component {
                 </div>
                 <div className="create-review_input-container">
                     <h1>Images: </h1>
-                    <Dropzone onDrop={(file)=> this.onDrop(file)}>Upload Images</Dropzone>
+                    <Dropzone style={{border: 'none', width:"70%", height: '150px', display: 'flex', alignItems: 'center', boxShadow: "1px 1px 1px #d3d3d3"}} onDrop={(file)=> this.onDrop(file)}><i style={{margin: '0 auto', fontSize: '2rem', color: 'var(--red)'}} className="fas fa-camera"></i></Dropzone>
                 </div>
+                <Button func={()=> this.setState({hello: 'hello'})} text="Submit"/>
             </div>
         );
     }
