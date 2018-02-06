@@ -75,13 +75,21 @@
     transform: scale(0.95, 0.95)
 }
 
+.profile_review-button-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: left;
+}
+
 #profile_review-match-button {
-    border: 1px solid var(--orange);
-    background-color: var(--orange);
+    border: 1px solid var(--red);
+    background-color: var(--red);
     color: #fff;
-    padding: 12px 30px;
+    padding: 10px 25px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 1px 2px 3px#d3d3d3;
+    font-size: 14px;
 }
 

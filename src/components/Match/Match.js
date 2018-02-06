@@ -57,12 +57,15 @@ class Match extends Component {
                 </div>
                 :
                 <div className="match_matched">
-                     <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
+                     
                     {
                         this.state.match.user2_id === this.props.user.id 
                         ?
                         this.state.match.pending ?
-                        <span className="match_accept-span" onClick={() => this.handleAccept()}>Accept</span>
+                        <div>
+                            <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
+                            <span className="match_accept-span" onClick={() => this.handleAccept()}>Accept</span>
+                        </div>
                         : null
                         :
                         null
