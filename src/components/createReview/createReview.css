@@ -22,12 +22,12 @@
 }
 
 .create-review_input-container input {
-    background-color: var(--orange);
+    background-color: #d3d3d3;
     width: 70%;
 }
 
 .create-review_input-container textarea {
-    background-color: var(--orange);
+    background-color: #d3d3d3;
     width: 70%;
 }
 
@@ -42,5 +42,5 @@ select {
     background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right #ddd;
     -webkit-appearance: none;
     background-position-x: 244px;
-    background-color: var(--orange);
+    background-color: #d3d3d3;
 }

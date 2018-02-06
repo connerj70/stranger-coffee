@@ -9,7 +9,8 @@ const express    = require('express'),
       userCtrl      = require('./controllers/userController'),
       matchCtrl     = require('./controllers/matchController'),
       axios         = require('axios'),
-      notificationsCtrl = require('./controllers/notificationsCtrl');
+      notificationsCtrl = require('./controllers/notificationsCtrl'),
+      reviewCtrl        = require('./controllers/reviewController');
 
 const app = express();
 
@@ -34,6 +35,7 @@ massive({
 }).then(db => {
     app.set('db', db);
 });
+
 
 passport.use(new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
