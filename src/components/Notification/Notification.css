@@ -1,7 +1,7 @@
 .notification_inner-container {
     position: absolute;
-    left: 38%;
-    top: 6%;
+    left: 41%;
+    top: 7%;
     width: 200px;
     min-height: 250px;
     background-color: whitesmoke;
@@ -34,4 +34,16 @@
     color: var(--blue);
     font-weight: 700;
     font-size: 16px;
+}
+
+.span-pointer {
+    width: 45px;
+    height: 30px;
+    background-color: whitesmoke;
+    z-index: 6;
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 89px;
+    transform: rotate(45deg);
 }

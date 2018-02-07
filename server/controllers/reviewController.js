@@ -31,6 +31,24 @@ module.exports = {
           });
     },
     createReview: function(req, res, next) {
-        console.log('yo')
+        console.log(req.body);
+        const db = req.app.get('db');
+        const {reviewerId, revieweeId, review, stars, imageUrls} = req.body;
+        db.create_review([reviewerId, revieweeId, review, stars]).then(resp => {
+            for(var i=0; i < imageUrls.length; i++) {
+                db.append_image_urls([imageUrls[i], resp[0].review_id]).then(resp => {
+                    
+                });
+            }
+            res.status(200).send('Review Created');
+        }).catch(err => {
+            res.status(500).send(err);
+        });
+    },
+    getReviews: function(req, res, next) {
+        const db = req.app.get('db');
+        db.get_random_reviews().then(resp => {
+            res.status(200).send(resp);
+        });
     }
 };

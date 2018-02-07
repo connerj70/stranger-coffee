@@ -5,6 +5,7 @@
     align-items: left;
     align-content: left;
     margin-right: 15px;
+    min-width: 200px;
 }
 
 #review-card-text {
@@ -12,6 +13,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     width: 95%;
+    text-align: left;
 }
 
 .review-card_background-image>img {

@@ -6,13 +6,23 @@ import './createReview.css';
 import axios from 'axios';
 import Button from '../../reuse/buttons';
 import {ToastContainer, toast} from 'react-toastify';
+import Match from '../Match/Match';
 
 class createReview extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {review: "", stars: 0, imageUrls: []};
+        this.state = {review: "", stars: 0, imageUrls: [], previousMatch: {}, loading: false};
 
+    }
+
+    componentDidMount() {
+        console.log(this.props.user);
+        axios.get('/api/previousmatches/' + this.props.user.id).then(resp => {
+            this.setState({
+                previousMatch: resp.data[0]
+            }, ()=> console.log(this.state.previousMatch));
+        });
     }
 
     handleChange(e) {
@@ -31,6 +41,9 @@ class createReview extends Component {
     }
 
     onDrop(files) {
+        this.setState({
+            loading: true
+        });
             const reader = new FileReader()
             , file = files[0]
             // , file = event.target.files[0]
@@ -45,7 +58,8 @@ class createReview extends Component {
                 let imageUrlsTemp = this.state.imageUrls.slice();
                 imageUrlsTemp.push(resp.data);
                 this.setState({
-                    imageUrls: imageUrlsTemp
+                    imageUrls: imageUrlsTemp,
+                    loading: false
                 });
                 toast.success("Success", {position: toast.POSITION.BOTTOM_RIGHT})
             });
@@ -54,8 +68,18 @@ class createReview extends Component {
     }
 
     handleSubmit() {
-        axios.post('/api/createreview', {review: this.state.review, stars: this.state.stars, imageUrls: this.state.imageUrls}).then(resp => {
+        let idForUserTwo;
+        if(this.state.previousMatch.user2_id === this.props.user.id) {
+            idForUserTwo = this.state.previousMatch.user1_id;
+        } else {
+            idForUserTwo = this.state.previousMatch.user2_id;
+        }
+        axios.post('/api/createreview', {review: this.state.review, stars: this.state.stars, imageUrls: this.state.imageUrls, reviewerId: this.props.user.id, revieweeId: idForUserTwo}).then(resp => {
             console.log(resp);
+            if(resp.status === 200) {
+                toast.success("Review Created");
+                setTimeout(()=>this.props.history.push('/profile'), 2000);
+            }
         });
     }
 
@@ -70,6 +94,7 @@ class createReview extends Component {
         return (
             <div className="create-review">
                 <NavBar background={true}/>
+                <Match title="Previous Match" id={this.props.user.id} city={this.props.user.city}/>
                 <div className="create-review_input-container">
                     <h1>Review: </h1>
                     <textarea placeholder="Write your review here..." rows="12" name="review" onChange={(e) => this.handleChange(e)} type="text"/>
@@ -86,6 +111,7 @@ class createReview extends Component {
                 </div>
                 <div className="create-review_input-container">
                     <h1>Images: </h1>
+                    {this.state.loading ? <div className='uploading-spinner-container'>Uploading... <i class="fas fa-spinner"></i></div> : null}
                     <Dropzone style={{border: 'none', width:"70%", height: '150px', display: 'flex', alignItems: 'center', boxShadow: "1px 1px 1px #d3d3d3"}} onDrop={(file)=> this.onDrop(file)}><i style={{margin: '0 auto', fontSize: '2rem', color: 'rgba(0, 0, 0, 0.5)'}} className="fas fa-camera"></i></Dropzone>
                 </div>
                 <div className="create-review_button-container">
@@ -101,4 +127,10 @@ class createReview extends Component {
     }
 }
 
-export default createReview;
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, null)(createReview);

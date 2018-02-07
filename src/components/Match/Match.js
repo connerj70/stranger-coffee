@@ -70,7 +70,7 @@ class Match extends Component {
                         :
                         null
                     }
-                    <h1>Current Match</h1>
+                    <h1>{this.props.title}</h1>
                     <div className='match_matched-sub-container'>
                         <h3>Status: </h3>
                         <span id="pending">{this.state.match.pending ? <span>Pending <i className="fas fa-spinner"></i></span> : <span>Accepted <i className="fas fa-check"></i></span>}</span>

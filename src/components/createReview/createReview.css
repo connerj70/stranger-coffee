@@ -66,3 +66,9 @@ select {
     height: 30vh;
     margin-top: 10px;
 }
+
+.uploading-spinner-container {
+    width: 70%;
+    margin: 0 auto;
+    bakcground-color: #fff;
+}

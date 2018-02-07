@@ -98,6 +98,8 @@ app.get("/api/notifications/:id", notificationsCtrl.getNotifications);
 app.delete('/api/notifications/:id', notificationsCtrl.deleteNotification);
 app.post('/api/newreview', reviewCtrl.uploadImage);
 app.post('/api/createreview', reviewCtrl.createReview);
+app.get('/api/previousmatches/:id', matchCtrl.previousMatches);
+app.get('/api/reviews', reviewCtrl.getReviews);
 //
 
 setInterval(function() {

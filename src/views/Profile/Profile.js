@@ -57,7 +57,7 @@ class Profile extends Component {
                             <Link to="/editprofile"><button className="profile_edit-button">EDIT</button></Link>
                         </div>
                     </div>
-                    <Match id={this.props.user.id} city={this.props.user.city}/>
+                    <Match title="Current Match" id={this.props.user.id} city={this.props.user.city}/>
                     <div className="profile_review-button-container">
                         <Link to="/createreview"><button id="profile_review-match-button">Review Previous Match</button></Link>
                     </div>

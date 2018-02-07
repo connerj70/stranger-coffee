@@ -61,5 +61,14 @@ module.exports = {
         db.update_match_pending([id]).then(resp => {
             res.status(200).send(resp);
         });
+    },
+    previousMatches: function(req, res, next) {
+        const db = req.app.get('db');
+        const id = parseInt(req.params.id);
+        db.get_previous_matches([id]).then(resp => {
+            res.status(200).send(resp);
+        }).catch(err => {
+            res.status(500).send(err);
+        });
     }
 };
