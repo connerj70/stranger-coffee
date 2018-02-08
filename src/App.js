@@ -5,6 +5,7 @@ import Home from './views/Home/Home';
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/EditProfile/EditProfile';
 import CreateReview from './components/createReview/createReview';
+import About from './views/About/About';
 import {Switch, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path="/profile" component={Profile} />
           <Route path='/editprofile' component={EditProfile} />
           <Route path="/createreview" component={CreateReview} />
+          <Route path="/about" component={About} />
         </Switch>
       </div>
     );

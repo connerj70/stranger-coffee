@@ -15,7 +15,6 @@ export default class Home extends Component {
 
     componentDidMount() {
         axios.get('/api/reviews').then(resp => {
-            console.log(resp.data);
             this.setState({
                 reviews: resp.data
             });
@@ -27,7 +26,6 @@ export default class Home extends Component {
         let reviews = 
             this.state.reviews.length ?
             this.state.reviews.map((value, i) => {
-                console.log(value)
             return (
                 <ReviewCard 
                 backgroundImage={value.image_urls[0]}

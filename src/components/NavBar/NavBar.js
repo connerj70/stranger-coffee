@@ -53,7 +53,7 @@ class NavBar extends Component {
                         <div onClick={()=>this.toggleOpen()}>
                             <i className="fas fa-bell"></i>
                         </div>
-                        <div>About</div>
+                        <Link to="/about"><div>About</div></Link>
                         <Link to="/profile"><div>Profile</div></Link>
                     </div>
                     }

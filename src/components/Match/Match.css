@@ -11,6 +11,10 @@
     box-shadow: 2px 2px 1px #d3d3d3;
 }
 
+.match_matched {
+    width: 100%;
+}
+
 .match_no-new-match button {
     background-color: var(--blue);
     border: none;
@@ -26,6 +30,9 @@
     justify-content: left;
     align-items: center;
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 40px;
 }
 
 .match_cancel-match {
