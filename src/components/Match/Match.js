@@ -70,6 +70,7 @@ class Match extends Component {
                         :
                         null
                     }
+                    <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
                     <h1>{this.props.title}</h1>
                     <div className='match_matched-sub-container'>
                         <h3>Status: </h3>

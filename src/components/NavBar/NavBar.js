@@ -5,6 +5,7 @@ import {getUserInfo, getCurrentMatch, getNotifications} from '../../ducks/reduce
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Notification from '../Notification/Notification';
+import logo from '../../assets/Group.svg';
 
 
 class NavBar extends Component {

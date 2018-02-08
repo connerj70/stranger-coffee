@@ -18,6 +18,11 @@
     margin-left: 10px;
 }
 
+.main-logo {
+    width: 140px;
+    height: 30px;
+}
+
 .navbar_right-div {
     display: flex;
     margin-right: 10px

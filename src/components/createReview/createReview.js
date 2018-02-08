@@ -19,6 +19,7 @@ class createReview extends Component {
     componentDidMount() {
         console.log(this.props.user);
         axios.get('/api/previousmatches/' + this.props.user.id).then(resp => {
+            console.log(resp);
             this.setState({
                 previousMatch: resp.data[0]
             }, ()=> console.log(this.state.previousMatch));
@@ -115,8 +116,8 @@ class createReview extends Component {
                     <Dropzone style={{border: 'none', width:"70%", height: '150px', display: 'flex', alignItems: 'center', boxShadow: "1px 1px 1px #d3d3d3"}} onDrop={(file)=> this.onDrop(file)}><i style={{margin: '0 auto', fontSize: '2rem', color: 'rgba(0, 0, 0, 0.5)'}} className="fas fa-camera"></i></Dropzone>
                 </div>
                 <div className="create-review_button-container">
-                    <Button color="#F95738" func={()=> this.handleSubmit()} text="Submit"/>
-                    <Button color="red" func={()=> this.setState({hello: 'hello'})} text="Cancel"/>
+                    <Button color="#083d77" func={()=> this.handleSubmit()} text="Submit"/>
+                    <Button color="#F95738" func={()=> this.setState({hello: 'hello'})} text="Cancel"/>
                 </div>
                 <ToastContainer autoClose={2000}/>
                 <div className="create-review_image-container">

@@ -64,7 +64,7 @@
 
 .profile_edit-button {
     padding: 10px 30px;
-    background-color: var(--dark-yellow);
+    background-color: var(--blue);
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -85,8 +85,8 @@
 }
 
 #profile_review-match-button {
-    border: 1px solid var(--red);
-    background-color: var(--red);
+    border: 1px solid var(--blue);
+    background-color: var(--blue);
     color: #fff;
     padding: 10px 25px;
     margin-bottom: 20px;
