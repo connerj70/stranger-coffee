@@ -10,7 +10,7 @@ class About extends Component {
             <div className="about-container">
                 <NavBar background={true}/>
                 <div className="about-sub-container">
-                    <img className="about-hero-image" src={background} />
+                    <img alt="two hands holding coffee" className="about-hero-image" src={background} />
                     <h1 className='about_hero-heading'><span className='strangers-in'>Strangers in coffeeshops</span><br /> <span className='getting-coffee'>getting coffee</span></h1>
                         <p>StrangerCoffee is all about breaking down barriers between people and finding adventure.</p>
                         <i class="fas fa-bullhorn about-fa"></i>

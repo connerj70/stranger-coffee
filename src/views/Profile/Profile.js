@@ -23,7 +23,7 @@ class Profile extends Component {
             <div className="profile">
             {
             this.props.user.username ? 
-                <div>
+                <div className='profile_inner-container'>
                     <NavBar background={true} />
                     <div className="profile_card-and-button-container">
                         <div className="profile_card">

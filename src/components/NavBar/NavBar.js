@@ -37,8 +37,11 @@ class NavBar extends Component {
                 <div className="navbar_right-div">
                     <Notification notifications={this.props.notifications} open={this.state.open}/>
                     {
-                    !this.props.user.name ? 
+                    !this.props.user.name ?
+                    <div className="navbar_about-and-login">
+                    <Link to="/about"><div>About</div></Link>
                     <a href={process.env.REACT_APP_LOGIN}>Login/Signup</a>
+                    </div>
                     :
                     <div className='navbar_flex'>
                         <div className="navbar_notification-div-container">

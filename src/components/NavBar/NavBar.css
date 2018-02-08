@@ -53,6 +53,14 @@
     animation: shake 1s infinite linear;
 }
 
+.navbar_about-and-login {
+    display: flex;
+}
+
+.navbar_about-and-login a {
+    margin-left: 15px;
+}
+
 @keyframes shake {
     from {
         transform: translateZ(0deg);

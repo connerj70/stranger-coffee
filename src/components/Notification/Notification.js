@@ -21,7 +21,7 @@ class Notification extends Component {
                     <h1>MATCH</h1>
                     <h2>Location: {value.location}</h2>
                     <h2>Date: {value.date}</h2>
-                    <h2>Match: {value.name}</h2>
+                    <h2>Match: {value.username}</h2>
                 </div>
                 </Link>
             )

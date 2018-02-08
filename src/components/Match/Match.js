@@ -63,7 +63,7 @@ class Match extends Component {
                         ?
                         this.state.match.pending ?
                         <div>
-                            <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
+                            {/* <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span> */}
                             <span className="match_accept-span" onClick={() => this.handleAccept()}>Accept</span>
                         </div>
                         : null

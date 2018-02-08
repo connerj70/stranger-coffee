@@ -72,7 +72,7 @@
 
 .match_matched-sub-container span {
     margin-left: 20px;
-    text-align: left;
+    text-align: right;
 }
 
 #match_matched-location {

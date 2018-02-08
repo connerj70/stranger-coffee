@@ -28,6 +28,7 @@ export default class Home extends Component {
             this.state.reviews.map((value, i) => {
             return (
                 <ReviewCard 
+                key={i}
                 backgroundImage={value.image_urls[0]}
                 stars={value.stars}
                 text={value.review}
