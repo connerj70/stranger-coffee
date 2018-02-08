@@ -10,7 +10,9 @@ const express    = require('express'),
       matchCtrl     = require('./controllers/matchController'),
       axios         = require('axios'),
       notificationsCtrl = require('./controllers/notificationsCtrl'),
-      reviewCtrl        = require('./controllers/reviewController');
+      reviewCtrl        = require('./controllers/reviewController'),
+      nodemailer        = require('nodemailer'),
+      smtpTransport     = require('nodemailer-smtp-transport');
 
 const app = express();
 
@@ -100,13 +102,44 @@ app.post('/api/newreview', reviewCtrl.uploadImage);
 app.post('/api/createreview', reviewCtrl.createReview);
 app.get('/api/previousmatches/:id', matchCtrl.previousMatches);
 app.get('/api/reviews', reviewCtrl.getReviews);
+
 //
+
+var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    auth: {
+      user: process.env.NODEMAILER_USER,
+      pass: process.env.NODEMAILER_PASS
+    }
+}));
 
 setInterval(function() {
     console.log('fired');
     const db = app.get('db');
+   
     db.select_upcoming_matches().then(resp => {
         for(let i=0; i < resp.length; i++) {
+
+            let mailOptions = {
+                from: process.env.NODEMAILER_EMAIL, // sender address
+                to: resp[i].email, // list of receivers
+                subject: 'Stranger Coffee Reminder', // Subject line
+                text: `You have a match at ${resp[i].location_name} on ${resp[i].date}. Don't leave your future friend hanging!` // plain text body
+            };
+
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    return console.log(error);
+                }
+                console.log('Message sent: %s', info.messageId);
+                // Preview only available when sending through an Ethereal account
+                console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        
+                // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+                // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+            });
+
             db.create_notification([resp[i].user1_id, resp[i].user2_id, resp[i].location_name, resp[i].location, resp[i].date]).then(resp => {
                 console.log(resp);
             });
@@ -114,9 +147,12 @@ setInterval(function() {
     });
     db.check_expired_matches().then(resp => {
         console.log(resp);
+        for(var i=0; i < resp.length; i++) {
+            db.delete_expired_matches([resp[i].match_id]);
+        }
     });
 }, 8.64e+7);
-
+//8.64e+7
 
 passport.serializeUser(function (id, done) {
     return done(null, id);

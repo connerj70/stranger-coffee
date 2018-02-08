@@ -1,6 +1,6 @@
 .about-sub-container {
     width: 100vw;
-    height: 100vh;
+    background: rbga(0,255,255,0.5);
 }
 
 .about-hero-image {
@@ -10,7 +10,35 @@
 
 .about_hero-heading {
     position: absolute;
-    top: 200px;
-    left: 150px;
-    color: #fff; 
+    left: 0;
+    right: 0;
+    top: 25%;
+    margin: auto;
+    color: #fff;
+    font-size: 23px; 
+}
+
+.strangers-in {
+    font-size: 35px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.getting-coffee {
+    font-size: 35px;
+    color: var(--dark-yellow);
+}
+
+p {
+    line-height: 1.5rem;
+    font-size: 21px;
+    margin-top: 15px;
+    text-align: left;
+    padding: 15px;
+    color: rgb(44, 44, 44);
+}
+
+.about-fa {
+    font-size: 50px;
+    color: var(--orange);
 }

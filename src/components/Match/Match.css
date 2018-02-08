@@ -53,6 +53,7 @@
     position: relative;
     left: -110px;
     top: 20px;
+    margin-right: 25px;
 }
 
 .match_matched h1 {
