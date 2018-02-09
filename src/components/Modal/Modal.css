@@ -1,0 +1,13 @@
+.modal {
+    width: 80%;
+    height: 20vh;
+    background-color: #F6F8FA;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -42%;
+    margin-top: -10vh;
+    max-width: 700px;
+    box-shadow: 1px 1px 1px #d3d3d3;
+    padding: 10px;
+}

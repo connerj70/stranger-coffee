@@ -3,19 +3,47 @@ import "./Profile.css";
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import {connect} from 'react-redux';
-import {getUserInfo} from '../../ducks/reducer';
+import {getUserInfo, deleteMatch} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import Match from '../../components/Match/Match';
+import Modal from '../../components/Modal/Modal';
+import {ToastContainer, toast} from 'react-toastify';
+
 
 class Profile extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {}
+        this.state = {modal: false}
+        this.handleTrashClick = this.handleTrashClick.bind(this);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
+        this.handleCancelClick = this.handleCancelClick.bind(this);
     }
 
     componentDidMount() {
         this.props.getUserInfo();
+    }
+
+    handleTrashClick() {
+        this.setState((prevState) => {
+            return {
+                modal: !prevState.modal
+            };
+        });
+    }
+
+    handleDeleteClick() {
+        this.props.deleteMatch(this.props.currentMatch.match_id);
+        this.setState({
+            modal: false
+        });
+        toast.success('Match deleted');
+    }
+
+    handleCancelClick() {
+        this.setState({
+            modal: false
+        });
     }
 
     render() {
@@ -57,12 +85,18 @@ class Profile extends Component {
                             <Link to="/editprofile"><button className="profile_edit-button">EDIT</button></Link>
                         </div>
                     </div>
-                    <Match title="Current Match" id={this.props.user.id} city={this.props.user.city}/>
+                    <Match handleTrashClick={this.handleTrashClick} title="Current Match" id={this.props.user.id} city={this.props.user.city}/>
                    
                     <div className="profile_review-button-container">
                         <Link to="/createreview"><button id="profile_review-match-button">Review Previous Match</button></Link>
                     </div>
                     <Footer />
+                    {
+                        this.state.modal ?
+                    <Modal  handleDeleteClick={this.handleDeleteClick} handleCancelClick={this.handleCancelClick} title="Delete" text="Are you sure you want to delete this match?" button1Text="Delete" button2Text="Cancel"/>
+                    :
+                    null
+                    }
                 </div>
                 :
                 <div>
@@ -70,15 +104,17 @@ class Profile extends Component {
                     <Link to="/">Return to home page.</Link>
                 </div>
             }
+            <ToastContainer autoClose={2000} />
             </div>
         )
     }
 }
 
-function mapStateToProps({user}) {
+function mapStateToProps({user, currentMatch}) {
     return {
-        user
+        user,
+        currentMatch
     }
 }
 
-export default connect(mapStateToProps, {getUserInfo})(Profile);
+export default connect(mapStateToProps, {getUserInfo, deleteMatch})(Profile);

@@ -60,6 +60,8 @@ module.exports = {
         const id = parseInt(req.params.id);
         db.update_match_pending([id]).then(resp => {
             res.status(200).send(resp);
+        }).catch(err => {
+            res.status(500).send(err);
         });
     },
     previousMatches: function(req, res, next) {
@@ -71,6 +73,14 @@ module.exports = {
             res.status(200).send(resp);
         }).catch(err => {
             res.status(500).send(err);
+        });
+    },
+    deleteMatch: function(req, res, next) {
+        const db = req.app.get('db');
+        const id = parseInt(req.params.id);
+
+        db.delete_current_match([id]).then(resp => {
+            res.status(200).send(resp);
         });
     }
 };
