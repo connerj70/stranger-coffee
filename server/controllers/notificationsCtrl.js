@@ -11,8 +11,10 @@ module.exports = {
     },
     deleteNotification: function(req, res, next) {
         const db = req.app.get('db');
-        const id = parseInt(req.params.id);
-        db.delete_notification([id]).then(resp => {
+        const id = req.params.id
+        const userId = req.body.userId
+        console.log(userId);
+        db.delete_notification([id, userId]).then(resp => {
             res.status(200).send(resp);
         });
     }

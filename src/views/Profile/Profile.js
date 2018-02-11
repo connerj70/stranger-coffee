@@ -3,7 +3,7 @@ import "./Profile.css";
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import {connect} from 'react-redux';
-import {getUserInfo, deleteMatch} from '../../ducks/reducer';
+import {getUserInfo, deleteMatch, getNotifications} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import Match from '../../components/Match/Match';
 import Modal from '../../components/Modal/Modal';
@@ -22,6 +22,7 @@ class Profile extends Component {
 
     componentDidMount() {
         this.props.getUserInfo();
+        this.props.getNotifications(this.props.user.id);
     }
 
     handleTrashClick() {
@@ -117,4 +118,4 @@ function mapStateToProps({user, currentMatch}) {
     }
 }
 
-export default connect(mapStateToProps, {getUserInfo, deleteMatch})(Profile);
+export default connect(mapStateToProps, {getUserInfo, deleteMatch, getNotifications})(Profile);

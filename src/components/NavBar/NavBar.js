@@ -49,7 +49,7 @@ class NavBar extends Component {
                         {
                             this.props.notifications.length
                             ?
-                            <div className="navbar_notification-div">1</div>
+                            <div className="navbar_notification-div">{this.props.notifications.length}</div>
                              :
                             null
                         }
