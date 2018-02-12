@@ -9,6 +9,7 @@
     padding: 10px;
     box-sizing: border-box;
     box-shadow: 1px 1px 1px #d3d3d3;
+    max-width: 530px;
 }
 
 .match_matched {
@@ -41,6 +42,7 @@
     border-radius: 50%;
     color: var(--red);
     float: right;
+    cursor: pointer;
 }
 
 .match_accept-span {
@@ -59,6 +61,12 @@
     color: var(--orange);
     font-weight: 700;
     text-shadow: 1px 1px #d3d3d3;
+}
+
+.match_current-match-username {
+    color: var(--orange);
+    font-size: 25px;
+    font-weight: 200;
 }
 
 .match_matched-sub-container h3 {
@@ -104,5 +112,11 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@media(min-width: 1000px) {
+    .match {
+       font-size: 20px;
     }
 }

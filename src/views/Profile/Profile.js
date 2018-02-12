@@ -105,7 +105,7 @@ class Profile extends Component {
                     <Link to="/">Return to home page.</Link>
                 </div>
             }
-            <ToastContainer autoClose={2000} />
+            <ToastContainer autoClose={1000} />
             </div>
         )
     }

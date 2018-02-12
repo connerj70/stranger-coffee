@@ -75,3 +75,15 @@
     }
 }
 
+@media(min-width: 750px) {
+    .navbar_flex div {
+        margin-right: 50px;
+        margin-left: 15px;
+        font-size: 18px;
+    }
+
+    .navbar_left-div {
+        font-size:25px;
+    }
+}
+

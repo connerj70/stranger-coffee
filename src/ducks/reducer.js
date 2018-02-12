@@ -57,8 +57,9 @@ export function getNotifications(id) {
 }
 
 export function deleteNotification(id, userId) {
-    const notifications = axios.delete(`/api/notifications/${id}`,{userId: userId}).then(resp => {
-        console.log(resp);
+    console.log("USERID",userId);
+    const notifications = axios.delete(`/api/notifications/${id}?userid=${userId}`).then(resp => {
+        console.log("DELETE",resp);
         return resp.data;
     });
 

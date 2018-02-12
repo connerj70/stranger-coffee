@@ -39,6 +39,48 @@ p {
 }
 
 .about-fa {
-    font-size: 50px;
+    font-size: 40px;
     color: var(--orange);
+}
+
+@media(min-width: 750px) {
+    .strangers-in {
+       font-size: 55px;
+    }
+    
+    .getting-coffee {
+        font-size: 55px;
+    }
+
+    p {
+       width: 70%;
+       margin: 20px auto;
+       font-size: 30px;
+       line-height: 2.5rem;
+    }
+}
+
+@media(min-width: 1000px) {
+
+    .about-hero-image {
+        width: 100%;
+    }
+
+    .strangers-in {
+        margin-top: 50px;
+       font-size: 85px;
+    }
+    
+    .getting-coffee {
+        font-size: 85px;
+        margin-top: 70px;
+        display: block;
+    }
+
+    p {
+        width: 40%;
+        margin: 20px auto;
+        font-size: 30px;
+        line-height: 2.5rem;
+     }
 }

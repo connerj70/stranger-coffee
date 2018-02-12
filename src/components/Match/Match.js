@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Match.css';
 import axios from 'axios';
-import {getCurrentMatch} from '../../ducks/reducer';
+import {getCurrentMatch, getNotifications} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 
 class Match extends Component {
@@ -26,6 +26,7 @@ class Match extends Component {
             //     match: resp.data
             // });
             this.props.getCurrentMatch(this.props.id);
+            //this.props.getNotifications(this.props.id);
         }).catch(err => {
             alert('Sorry no matches available in your area');
         });
@@ -74,7 +75,7 @@ class Match extends Component {
                         null
                     }
                     <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span>
-                    <h1>{this.props.title}</h1>
+                    <h1>{this.props.title}: <span className='match_current-match-username'>{this.props.currentMatch.username}</span></h1>
                     <div className='match_matched-sub-container'>
                         <h3>Status: </h3>
                         <span id="pending">{this.props.currentMatch.pending ? <span>Pending <i className="fas fa-spinner"></i></span> : <span>Accepted <i className="fas fa-check"></i></span>}</span>
@@ -96,10 +97,6 @@ class Match extends Component {
                             :
                             null
                         }
-                    </div>
-                    <div className='match_matched-sub-container'>
-                        <h3>Match:</h3>
-                        <span id="match_matched-match">{this.props.currentMatch.username}</span>
                     </div>
                 </div>
             }
