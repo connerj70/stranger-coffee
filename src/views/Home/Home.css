@@ -52,14 +52,14 @@
     }
 
     .home_join-now-button:hover {
-        background-color: var(--cream);
-        color: var(--red);
+        background-color: var(--blue);
+        color: var(--cream);
 
     }
 
 .home_heading {
     margin-top: 4rem;
-    color: black;
+    color: #484848;
     margin-bottom: 2rem;
     font-size: 22px;
     font-weight: 500;
@@ -92,18 +92,27 @@
 }
 
 .fa-users {
-    color: var(--blue);
+    color: var(--dark-yellow);
     font-size: 35px;
 }
 
 .fa-share-alt {
-    color: var(--blue);
+    color: var(--dark-yellow);
     font-size: 35px;
 }
 
 .fa-smile {
-    color: var(--blue);
+    color: var(--dark-yellow);
     font-size: 35px;
+}
+
+.home_ending-div {
+    margin-bottom: 50px;
+}
+
+.home_ending-div h1 {
+    font-size: 40px;
+    margin-top: 50px;
 }
 
 @media(min-width: 800px) {
@@ -126,7 +135,7 @@
 
     .home_heading {
         width: 60%;
-        margin: 250px auto;
+        margin: 210px auto;
         margin-bottom: 25px;
         font-size: 30px;
     }
@@ -158,23 +167,23 @@
 
     .home_join-now-button {
        
-        padding: 20px 45px;
+        padding: 15px 40px;
         margin-top: 20px;
        font-size: 20px;
     }
 
     .fa-users {
-        color: var(--blue);
-        font-size: 55px;
+        color: var(--dark-yellow);
+        font-size: 40px;
     }
     
     .fa-share-alt {
-        color: var(--blue);
-        font-size: 55px;
+        color: var(--dark-yellow);
+        font-size: 40px;
     }
     
     .fa-smile {
-        color: var(--blue);
-        font-size: 55px;
+        color: var(--dark-yellow);
+        font-size: 40px;
     }
 }

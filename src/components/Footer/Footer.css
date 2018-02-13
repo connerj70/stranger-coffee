@@ -20,3 +20,10 @@
 .footer>div i {
     cursor: pointer;
 }
+
+@media(min-width: 800px) {
+    .footer>div {
+        width: 70%;
+        max-width: 300px;
+    }
+}

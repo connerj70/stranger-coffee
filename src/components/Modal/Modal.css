@@ -7,7 +7,7 @@
     left: 50%;
     margin-left: -40%;
     margin-top: -10vh;
-    max-width: 700px;
+    max-width: 500px;
     box-shadow: 1px 1px 1px #d3d3d3;
     padding: 10px;
     border: 1px solid #d3d3d3;
@@ -15,7 +15,7 @@
 
 @media(min-width: 800px) {
     .modal {
-        margin-left: -350px;
+        margin-left: -260px;
     }
 
     .modal h1 {

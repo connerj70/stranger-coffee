@@ -61,6 +61,11 @@ export default class Home extends Component {
                     <InfoCard icon={<i className="far fa-smile"></i>} heading="Meet up" text="Help spread joy to others by sharing coffee and conversation"/>
                     <InfoCard icon={<i className="fa fa-share-alt" aria-hidden="true"></i>} heading="Networking" text="Build your network by sharing your story and connecting with others"/>
                 </div>
+
+                <div className="home_ending-div">
+                    <h1>Jump right in!</h1>
+                    <a href={process.env.REACT_APP_LOGIN}><button className="home_join-now-button">JOIN NOW</button></a>
+                </div>
                 <Footer />
             </div>
         )

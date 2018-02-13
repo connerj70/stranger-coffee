@@ -25,4 +25,8 @@ button:focus {
   border: none
 }
 
+button {
+  cursor: pointer;
+}
+
 

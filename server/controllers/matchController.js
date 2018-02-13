@@ -80,6 +80,7 @@ module.exports = {
         const id = parseInt(req.params.id);
 
         db.delete_current_match([id]).then(resp => {
+            console.log(resp);
             res.status(200).send(resp);
         });
     }

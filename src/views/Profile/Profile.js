@@ -55,6 +55,9 @@ class Profile extends Component {
                 <div className='profile_inner-container'>
                     <NavBar background={true} />
                     <div className="profile_card-and-button-container">
+                        <div className="profile_card-header">
+                            <h1>Profile</h1>
+                        </div>
                         <div className="profile_card">
                             <div className="profile_card-image-container">
                                 <img alt="user profile" src={this.props.user.profile_pic} />

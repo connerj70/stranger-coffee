@@ -72,3 +72,30 @@ select {
     margin: 0 auto;
     bakcground-color: #fff;
 }
+
+@media(min-width: 800px) {
+
+    .create-review_input-container div {
+        width: 35% !important;
+    }
+
+    .create-review_input-container h1 {
+       width: 35%;
+    }
+
+    .create-review_input-container textarea {
+        width: 35%;
+    }
+
+    .create-review_button-container {
+      width: 35%;
+    }
+    
+    .create-review_image-container {
+       width: 35%;
+    }
+
+    .uploading-spinner-container {
+        width: 35%;
+    }
+}

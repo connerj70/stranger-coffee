@@ -37,7 +37,6 @@ class Notification extends Component {
                 this.props.open 
                 ? 
                 <div className="notification_inner-container">
-                 <span className="span-pointer"></span>
                     {notificationsToDisplay}
                 </div>
                 :

@@ -7,6 +7,7 @@ import axios from 'axios';
 import Button from '../../reuse/buttons';
 import {ToastContainer, toast} from 'react-toastify';
 import Match from '../Match/Match';
+import Footer from '../Footer/Footer';
 
 class createReview extends Component {
     constructor(props) {
@@ -123,6 +124,7 @@ class createReview extends Component {
                 <div className="create-review_image-container">
                     {picturesToDisplay}
                 </div>
+                <Footer />
             </div>
         );
     }
