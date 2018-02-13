@@ -47,3 +47,18 @@
     color: #fff;
     background-color: var(--red);
 }
+
+@media(min-width: 800px) {
+    .edit-profile_input-container {
+        width: 40%;
+    }
+
+    .edit-profile_button-container {
+        width: 40%;
+    }
+
+    .edit-profile_button {
+        padding: 15px 30px;
+       
+    }  
+}

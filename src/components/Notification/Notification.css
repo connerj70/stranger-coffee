@@ -64,3 +64,9 @@
         top: 5%;
     }
 }
+
+@media(min-width: 1500px) {
+    .notification_inner-container {
+        left: 78%;
+    }
+}

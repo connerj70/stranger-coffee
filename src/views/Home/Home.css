@@ -187,3 +187,20 @@
         font-size: 40px;
     }
 }
+
+@media(min-width: 1800px) {
+    .home_heading {
+       
+        margin: 270px auto;
+        margin-bottom: 40px;
+    }
+
+    .less_heading {
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+
+    .home_info-card-container {
+        margin-top: 60px;
+    }
+}

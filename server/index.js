@@ -152,7 +152,7 @@ setInterval(function() {
             db.delete_expired_matches([resp[i].match_id]);
         }
     });
-}, 8.64e+7);
+}, 300000);
 //8.64e+7
 
 passport.serializeUser(function (id, done) {
