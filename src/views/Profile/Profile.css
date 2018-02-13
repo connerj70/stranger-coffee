@@ -21,7 +21,6 @@
     border: 1px solid #d3d3d3;
     padding: 10px;
     box-sizing: border-box;
-    /* box-shadow: 1px 1px 1px #d3d3d3; */
 }
 
 .profile_card-header {
@@ -100,6 +99,23 @@
     transform: scale(0.95, 0.95)
 }
 
+.profile_match-main-header {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: -30px;
+    margin-top: 30px;
+    background-color: #EDEFED;
+    border: 1px solid #d3d3d3;
+    border-bottom: none;
+    height: 40px;
+    padding-top: 5px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: #484848;
+}
+
 .profile_review-button-container {
     width: 95%;
     margin: 0 auto;
@@ -113,7 +129,6 @@
     background-color: var(--blue);
     color: #fff;
     padding: 10px 25px;
-    margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 1px 2px 3px#d3d3d3;
     font-size: 14px;

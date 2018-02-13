@@ -118,7 +118,7 @@ class createReview extends Component {
                 </div>
                 <div className="create-review_button-container">
                     <Button color="#083d77" func={()=> this.handleSubmit()} text="Submit"/>
-                    <Button color="#F95738" func={()=> this.setState({hello: 'hello'})} text="Cancel"/>
+                    <Button color="#F95738" func={()=> this.props.history.push('/profile')} text="Cancel"/>
                 </div>
                 <ToastContainer autoClose={2000}/>
                 <div className="create-review_image-container">

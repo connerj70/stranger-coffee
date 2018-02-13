@@ -33,6 +33,7 @@
     width: 80%;
     margin: 0 auto;
     padding-bottom: 14px;
+    min-height: 20vw;
 }
 
 .edit-profile_button {
@@ -55,6 +56,7 @@
 
     .edit-profile_button-container {
         width: 40%;
+        min-height: 15vw;
     }
 
     .edit-profile_button {

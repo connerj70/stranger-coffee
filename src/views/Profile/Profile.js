@@ -88,8 +88,11 @@ class Profile extends Component {
                         <div className="profile_button-container">
                             <Link to="/editprofile"><button className="profile_edit-button">EDIT</button></Link>
                         </div>
+                    <div className="profile_match-main-header">
+                        <h1>Match</h1>
                     </div>
                     <Match handleTrashClick={this.handleTrashClick} title="Current Match" id={this.props.user.id} city={this.props.user.city}/>
+                    </div>
                    
                     <div className="profile_review-button-container">
                         <Link to="/createreview"><button id="profile_review-match-button">Review Previous Match</button></Link>
