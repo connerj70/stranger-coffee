@@ -85,5 +85,18 @@
     .navbar_left-div {
         font-size:25px;
     }
+
+    .navbar_notification-div {
+        width:17px;
+        height: 17px;
+        border-radius: 50%;
+        background-color: var(--blue);
+        position: relative;
+        left: 123px;
+        top: -8px;
+        font-size: 10px;
+        padding-top: 2px;
+        box-sizing: border-box;
+    }
 }
 
