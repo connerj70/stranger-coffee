@@ -30,6 +30,7 @@ module.exports = {
                     };
                     let id2 = parseInt(matchedUser.id);
                     var date = new Date();
+                        date.setHours(19);
                     var creationTime = new Date();
                     var numberOfDaysToAdd = 6;
                     date.setDate(date.getDate() + numberOfDaysToAdd); 
@@ -80,7 +81,6 @@ module.exports = {
         const id = parseInt(req.params.id);
 
         db.delete_current_match([id]).then(resp => {
-            console.log(resp);
             res.status(200).send(resp);
         });
     }

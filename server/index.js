@@ -16,6 +16,8 @@ const express    = require('express'),
 
 const app = express();
 
+//app.use( express.static( `${__dirname}/../build`));
+
 app.use(cors());
 app.use(bodyParser({limit: '50mb'}));
 
@@ -152,7 +154,7 @@ setInterval(function() {
             db.delete_expired_matches([resp[i].match_id]);
         }
     });
-}, 300000);
+}, 8.64e+7);
 //8.64e+7
 
 passport.serializeUser(function (id, done) {

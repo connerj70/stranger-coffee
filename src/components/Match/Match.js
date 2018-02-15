@@ -39,7 +39,7 @@ class Match extends Component {
         //    this.setState({
         //        match: tempMatch
         //    });
-        this.props.getCurrentMatch();
+        this.props.getCurrentMatch(this.props.id);
         });
     }
 
@@ -68,7 +68,7 @@ class Match extends Component {
                         this.props.currentMatch.pending ?
                         <div>
                             {/* <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span> */}
-                            <span className="match_accept-span" onClick={() => this.handleAccept()}>Accept</span>
+                            <div className="match_accept-span" onClick={() => this.handleAccept()}>Accept</div>
                         </div>
                         : null
                         :
