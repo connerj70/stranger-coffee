@@ -30,7 +30,7 @@ export default class ReviewCard extends Component {
                 <div className="review-card_user-container">
                     <img alt="user" src={this.props.userImage}/>
                     <div>
-                        <div>{this.props.userName}</div>
+                        <div className="review-card_user-username">{this.props.userName}</div>
                     </div>
                 </div>
             </div>

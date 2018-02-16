@@ -25,7 +25,7 @@ class Home extends Component {
     }
 
     render() {
-        
+        console.log(this.state.reviews)
         let reviews = 
             this.state.reviews.length ?
             this.state.reviews.map((value, i) => {
