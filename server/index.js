@@ -16,12 +16,8 @@ const express    = require('express'),
 
 const app = express();
 
-<<<<<<< HEAD
 app.use( express.static( `${__dirname}/../build`));
 
-=======
-//app.use( express.static( `${__dirname}/../build`));
->>>>>>> master
 
 app.use(cors());
 app.use(bodyParser({limit: '50mb'}));
