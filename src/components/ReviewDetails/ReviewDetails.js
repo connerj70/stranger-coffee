@@ -23,7 +23,11 @@ class ReviewDetails extends Component {
     }
 
     render() {
-        let starsToDisplay = functions.createStars(1);
+        console.log(this.state.review.stars)
+        let starsToDisplay;
+        if(this.state.review.stars) {
+            starsToDisplay = functions.createStars(this.state.review.stars);
+        }
         let imageUrl;
         if(this.state.review.image_urls) {
             imageUrl = this.state.review.image_urls[0];
@@ -43,10 +47,10 @@ class ReviewDetails extends Component {
                         </span>
                     </div>
                     <div className="review-details_user-info-container">
-                        <img src={this.state.review.profile_pic}/>
                         <div>
                             {this.state.review.username}
                         </div>
+                        <img src={this.state.review.profile_pic}/>
                     </div>
                     <div className="review-details_review-container">
                         <p>
