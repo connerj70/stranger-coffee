@@ -1,0 +1,50 @@
+.review-details {
+    width: 100%;
+}
+
+.review-details_inner-container {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 70vh
+}
+
+.review-details_image-container {
+    width: 90%;
+    margin: 30px auto;
+    margin-bottom: 10px;
+}
+
+.review-details_image-container img {
+    width: 100%;
+}
+
+.review-details_star-container {
+    padding: 3vw 6vw;
+    display: flex;
+    align-content: left;
+}
+
+.review-details_user-info-container {
+    display: flex;
+    padding: 1vw 6vw;
+    align-items: center;
+}
+
+.review-details_user-info-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.review-details_review-container {
+    display: flex;
+    align-items: left;
+}
+
+.review-details_review-container p {
+    padding: 1vw 6vw;
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
+}
