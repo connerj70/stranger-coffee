@@ -16,8 +16,12 @@ const express    = require('express'),
 
 const app = express();
 
+<<<<<<< HEAD
 app.use( express.static( `${__dirname}/../build`));
 
+=======
+//app.use( express.static( `${__dirname}/../build`));
+>>>>>>> master
 
 app.use(cors());
 app.use(bodyParser({limit: '50mb'}));
@@ -70,7 +74,7 @@ passport.use(new Auth0Strategy({
                     return done(null, user[0].auth_id)
                 })
         }
-    })
+    }).catch(err => res.status(500).send(err));
 }));
 
 app.get(`/auth/`, passport.authenticate(`auth0`));
@@ -105,6 +109,7 @@ app.post('/api/newreview', reviewCtrl.uploadImage);
 app.post('/api/createreview', reviewCtrl.createReview);
 app.get('/api/previousmatches/:id', matchCtrl.previousMatches);
 app.get('/api/reviews', reviewCtrl.getReviews);
+app.get('/api/review/:id', reviewCtrl.getReview);
 app.delete('/api/match/:id', matchCtrl.deleteMatch);
 
 //
@@ -155,7 +160,7 @@ setInterval(function() {
             db.delete_expired_matches([resp[i].match_id]);
         }
     });
-}, 300000);
+}, 8.64e+7);
 //8.64e+7
 
 passport.serializeUser(function (id, done) {

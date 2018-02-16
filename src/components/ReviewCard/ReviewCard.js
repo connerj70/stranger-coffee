@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import "./ReviewCard.css";
+import functions from '../../reuse/functions/functions';
+
 
 
 
@@ -12,17 +14,7 @@ export default class ReviewCard extends Component {
    
 
     render() {
-        let key = 1;
-        var starsToDisplay = [];
-        for(var i=0; i < this.props.stars; i++) {
-            starsToDisplay.push(<i style={{color: "#F4D35E"}} className="fas fa-star" key={key}></i>)
-            key++
-        }
-
-        while(starsToDisplay.length < 5) {
-            starsToDisplay.push(<i key={key} className="far fa-star" style={{color: "#EBEBD3"}}></i>)
-            key++
-        }
+      let starsToDisplay = functions.createStars(this.props.stars)
 
         return (
             <div className="review-card_wrapper">

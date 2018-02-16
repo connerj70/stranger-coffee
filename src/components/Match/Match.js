@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Match.css';
 import axios from 'axios';
-import {getCurrentMatch, getNotifications} from '../../ducks/reducer';
+import {getCurrentMatch} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 
 class Match extends Component {
@@ -39,7 +39,7 @@ class Match extends Component {
         //    this.setState({
         //        match: tempMatch
         //    });
-        this.props.getCurrentMatch();
+        this.props.getCurrentMatch(this.props.id);
         });
     }
 
@@ -66,9 +66,9 @@ class Match extends Component {
                         this.props.currentMatch.user2_id === this.props.user.id 
                         ?
                         this.props.currentMatch.pending ?
-                        <div>
+                        <div className="match_accept-span-container">
                             {/* <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span> */}
-                            <span className="match_accept-span" onClick={() => this.handleAccept()}>Accept</span>
+                            <div className="match_accept-span" onClick={() => this.handleAccept()}>Accept</div>
                         </div>
                         : null
                         :

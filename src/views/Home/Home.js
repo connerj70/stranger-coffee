@@ -5,8 +5,11 @@ import InfoCard from '../../components/InfoCard/InfoCard';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import axios from 'axios';
+import defaultImage from '../../assets/300.png';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-export default class Home extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
 
@@ -26,15 +29,23 @@ export default class Home extends Component {
         let reviews = 
             this.state.reviews.length ?
             this.state.reviews.map((value, i) => {
+            let imageUrl;
+            if(value.image_urls) {
+                imageUrl = value.image_urls[0];
+            } else {
+                imageUrl = defaultImage;
+            }
             return (
-                <ReviewCard 
-                key={i}
-                backgroundImage={value.image_urls[0]}
-                stars={value.stars}
-                text={value.review}
-                   userImage={value.profile_pic}
-                   userName={value.username}
-                />
+                <Link to={`/reviewdetails/${value.review_id}`}>
+                    <ReviewCard 
+                    key={i}
+                    backgroundImage={imageUrl}
+                    stars={value.stars}
+                    text={value.review}
+                    userImage={value.profile_pic}
+                    userName={value.username}
+                    />
+                </Link>
             )
         })
         :
@@ -47,7 +58,11 @@ export default class Home extends Component {
                 <div className="home_hero-captions">
                     <h2>Strangers Become Friends</h2>
                     <h3>Discover friends while enjoying a great drink</h3>
+                    { !this.props.user.id ?
                     <a href={process.env.REACT_APP_LOGIN}><button className="home_join-now-button">JOIN NOW</button></a>
+                    :
+                    null
+                    }
                 </div>
                 <h3 className="home_heading">See What Friendships Have Been Made</h3>
                 <div className="home_review-card-container">
@@ -64,10 +79,22 @@ export default class Home extends Component {
 
                 <div className="home_ending-div">
                     <h1>Jump right in!</h1>
+                    { !this.props.user.id ?
                     <a href={process.env.REACT_APP_LOGIN}><button className="home_join-now-button">JOIN NOW</button></a>
+                    :
+                    null
+                    }
                 </div>
                 <Footer />
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, null)(Home);

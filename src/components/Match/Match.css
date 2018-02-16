@@ -48,15 +48,22 @@
     font-size: 14px;
 }
 
+.match_accept-span-container {
+    display: flex;
+    align-items: left;
+    align-content: left;
+    margin-bottom: 10px;
+}
+
 .match_accept-span {
-    padding: 4px 6px;
+    padding: 6px 8px;
     border-radius: 5px;
     color: #fff;
     background-color: #32CD32;
-    position: relative;
-    left: -110px;
-    top: 20px;
     margin-right: 25px;
+    z-index:10;
+    text-align: center;
+    display: inline-block;
 }
 
 .match_matched h1 {
