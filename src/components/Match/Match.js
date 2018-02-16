@@ -66,7 +66,7 @@ class Match extends Component {
                         this.props.currentMatch.user2_id === this.props.user.id 
                         ?
                         this.props.currentMatch.pending ?
-                        <div>
+                        <div className="match_accept-span-container">
                             {/* <span onClick={()=> this.deleteMatch()} className="match_cancel-match"><i className="fas fa-trash-alt"></i></span> */}
                             <div className="match_accept-span" onClick={() => this.handleAccept()}>Accept</div>
                         </div>
