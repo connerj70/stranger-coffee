@@ -104,6 +104,7 @@ app.post('/api/newreview', reviewCtrl.uploadImage);
 app.post('/api/createreview', reviewCtrl.createReview);
 app.get('/api/previousmatches/:id', matchCtrl.previousMatches);
 app.get('/api/reviews', reviewCtrl.getReviews);
+app.get('/api/review/:id', reviewCtrl.getReview);
 app.delete('/api/match/:id', matchCtrl.deleteMatch);
 
 //

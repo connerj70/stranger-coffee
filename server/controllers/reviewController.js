@@ -50,5 +50,12 @@ module.exports = {
         db.get_random_reviews().then(resp => {
             res.status(200).send(resp);
         });
+    },
+    getReview: function(req, res, next) {
+        const db = req.app.get('db');
+        const id = req.params.id;
+        db.get_review([id]).then(resp => {
+            res.status(200).send(resp);
+        });
     }
 };

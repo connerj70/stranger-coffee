@@ -1,16 +1,25 @@
 import React, {Component} from 'react';
 import functions from '../../reuse/functions/functions';
+import axios from 'axios';
+
 class ReviewDetails extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {};
+        this.state = {review: {}};
+    }
+
+    componentDidMount() {
+        axios.get(`/api/review/${this.props.match.params.id}`).then(resp => {
+            console.log(resp.data);
+            this.setState({
+                review: resp.data[0]
+            });
+        });
     }
 
     render() {
         let starsToDisplay = functions.createStars(1);
-
-        
         return (
             <div>
                 <div className="review-details_image-container">
@@ -36,5 +45,4 @@ class ReviewDetails extends Component {
         )
     }
 }
-
 export default ReviewDetails;

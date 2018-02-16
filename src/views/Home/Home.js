@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import axios from 'axios';
 import defaultImage from '../../assets/300.png';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class Home extends Component {
@@ -35,14 +36,16 @@ class Home extends Component {
                 imageUrl = defaultImage;
             }
             return (
-                <ReviewCard 
-                key={i}
-                backgroundImage={imageUrl}
-                stars={value.stars}
-                text={value.review}
-                   userImage={value.profile_pic}
-                   userName={value.username}
-                />
+                <Link to={`/reviewdetails/${value.review_id}`}>
+                    <ReviewCard 
+                    key={i}
+                    backgroundImage={imageUrl}
+                    stars={value.stars}
+                    text={value.review}
+                    userImage={value.profile_pic}
+                    userName={value.username}
+                    />
+                </Link>
             )
         })
         :
