@@ -69,7 +69,7 @@ passport.use(new Auth0Strategy({
                     return done(null, user[0].auth_id)
                 })
         }
-    })
+    }).catch(err => res.status(500).send(err));
 }));
 
 app.get(`/auth/`, passport.authenticate(`auth0`));

@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import "./NavBar.css";
-import axios from 'axios';
 import {getUserInfo, getCurrentMatch, getNotifications} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Notification from '../Notification/Notification';
-import logo from '../../assets/Group.svg';
-
 
 class NavBar extends Component {
     constructor(props) {

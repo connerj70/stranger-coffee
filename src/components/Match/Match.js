@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Match.css';
 import axios from 'axios';
-import {getCurrentMatch, getNotifications} from '../../ducks/reducer';
+import {getCurrentMatch} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 
 class Match extends Component {
