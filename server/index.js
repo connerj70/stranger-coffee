@@ -16,6 +16,9 @@ const express    = require('express'),
 
 const app = express();
 
+app.use( express.static( `${__dirname}/../build`));
+
+
 app.use(cors());
 app.use(bodyParser({limit: '50mb'}));
 
