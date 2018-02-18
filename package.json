@@ -34,7 +34,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:80",
+  "proxy": "http://localhost:3030",
   "devDependencies": {
     "jest": "^22.2.1"
   }
