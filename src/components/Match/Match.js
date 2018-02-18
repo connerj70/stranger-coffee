@@ -95,7 +95,8 @@ class Match extends Component {
                         {
                             this.props.currentMatch.date
                             ?
-                        <span id="match_matched-date">{this.props.currentMatch.date.split("T0")[0]} {this.props.currentMatch.date.split("T0")[1].slice(0,4)}PM</span>
+                        <span id="match_matched-date">{this.props.currentMatch.date.split("T0")[0]} 7PM</span>
+                        // {this.props.currentMatch.date.split("T0")[1].slice(0,4)}
                             :
                             null
                         }
