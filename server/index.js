@@ -53,6 +53,7 @@ passport.use(new Auth0Strategy({
     db.find_user([String(profile.identities[0].user_id)]).then(user => {
         console.log("user from Auth0Strat", user)        //edit for our app
         if (user[0]) {
+            console.log(user[0]);
             // db.add_visit([String(user[0].user_id)])                             // edit for our app
             return done(null, user[0].auth_id)
         }
