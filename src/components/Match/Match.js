@@ -21,15 +21,19 @@ class Match extends Component {
     }
 
     handleNewMatch() {
-        axios.post('/api/match', {id: this.props.id, city: this.props.city}).then(resp => {
-            // this.setState({
-            //     match: resp.data
-            // });
-            this.props.getCurrentMatch(this.props.id);
-            //this.props.getNotifications(this.props.id);
-        }).catch(err => {
-            alert('Sorry no matches available in your area');
-        });
+        if(!this.props.city) {
+            alert('Please edit your profile and fill in which city you are from');
+        } else {
+            axios.post('/api/match', {id: this.props.id, city: this.props.city}).then(resp => {
+                // this.setState({
+                //     match: resp.data
+                // });
+                this.props.getCurrentMatch(this.props.id);
+                //this.props.getNotifications(this.props.id);
+            }).catch(err => {
+                alert('Sorry no matches available in your area');
+            });
+        }
     }
 
     handleAccept() {

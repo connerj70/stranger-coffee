@@ -63,7 +63,7 @@ passport.use(new Auth0Strategy({
                 profile.name,
                 profile.identities[0].user_id,
                 profile.picture,
-                profile.email
+                profile.emails[0].value
             ])
                 .then(user => {
                     db.find_user([String(user[0].auth_id)])
