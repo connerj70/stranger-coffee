@@ -39,7 +39,7 @@ class ReviewDetails extends Component {
                 <NavBar background={true}/>
                 <div className="review-details_inner-container">
                     <div className="review-details_image-container">
-                        <img src={imageUrl} />
+                        <img alt="user submitted" src={imageUrl} />
                     </div>
                     <div className="review-details_star-container">
                         <span>
@@ -50,7 +50,7 @@ class ReviewDetails extends Component {
                         <div>
                             {this.state.review.username}
                         </div>
-                        <img src={this.state.review.profile_pic}/>
+                        <img alt='profile' src={this.state.review.profile_pic}/>
                     </div>
                     <div className="review-details_review-container">
                         <p>
