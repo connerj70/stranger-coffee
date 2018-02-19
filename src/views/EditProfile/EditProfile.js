@@ -42,7 +42,6 @@ class EditProfile extends Component {
     handleSave() {
         axios.put('/api/users', this.state).then(resp => {
             if(resp.status === 200) {
-                alert("updated successfully!");
                     this.props.history.push('/profile');
             } else {
                 alert('Failed to update.');

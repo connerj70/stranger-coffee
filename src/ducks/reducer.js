@@ -16,7 +16,7 @@ export function getUserInfo() {
     const userData = axios.get('/auth/me')
     .then( res => {
         return res.data;
-    })
+    });
     return {
         type: GET_USER_INFO,
         payload: userData

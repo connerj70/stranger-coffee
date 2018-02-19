@@ -67,6 +67,7 @@ passport.use(new Auth0Strategy({
                 profile.emails[0].value
             ])
                 .then(user => {
+                    console.log(user);
                     db.find_user([String(user[0].auth_id)])
                     return done(null, user[0].auth_id)
                 })
