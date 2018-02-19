@@ -51,3 +51,37 @@
     text-align: left;
     font-size: 16px;
 }
+
+@media(min-width: 600px) {
+    .review-details_inner-container {
+        width: 80%;
+        margin: 20px auto;
+        min-height: 75vh;
+    }
+}
+
+@media(min-width: 900px) {
+    .review-details_inner-container {
+        width: 60%;
+        margin: 20px auto;
+        min-height: 75vh;
+        font-size: 20px;
+    }
+
+    .review-details_star-container {
+        padding: 0.5vw 6vw;
+        display: flex;
+        align-content: left;
+    }
+
+    .review-details_star-container {
+        padding: 0.5vw 6vw;
+        display: flex;
+        align-content: left;
+    }
+
+    .review-details_review-container p {
+        padding: 0.5vw 6vw;
+        margin: 0;
+    }
+}
