@@ -7,6 +7,7 @@ import {getUserInfo, deleteMatch, getNotifications} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import Match from '../../components/Match/Match';
 import Modal from '../../components/Modal/Modal';
+import Card from '../../reuse/Card/Card';
 import {ToastContainer, toast} from 'react-toastify';
 
 
@@ -92,11 +93,13 @@ class Profile extends Component {
                         <h1>Match</h1>
                     </div>
                     <Match handleTrashClick={this.handleTrashClick} title="Current Match" id={this.props.user.id} city={this.props.user.city}/>
-                    </div>
-                   
                     <div className="profile_review-button-container">
                         <Link to="/createreview"><button id="profile_review-match-button">Review Previous Match</button></Link>
                     </div>
+                    <Card />
+                    </div>
+                   
+                    
                     <Footer />
                     {
                         this.state.modal ?

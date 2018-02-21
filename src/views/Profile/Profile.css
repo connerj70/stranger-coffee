@@ -86,17 +86,18 @@
 
 .profile_edit-button {
     padding: 10px 30px;
-    background-color: var(--blue);
-    border: none;
+    background-color: #fff;
+    border: 1px solid var(--blue);
+    color: var(--blue);
     border-radius: 5px;
-    color: #fff;
     font-weight: 700;
     box-shadow: 1px 2px 5px #d3d3d3;
     transition: all 0.2s;
 }
 
 .profile_edit-button:hover {
-    background-color: #083e77a6;
+    background-color: var(--blue);
+    color: #fff;
 }
 
 .profile_edit-button:active {
@@ -129,17 +130,19 @@
 }
 
 #profile_review-match-button {
-    background-color: var(--blue);
-    color: #fff;
+    border: 1px solid var(--blue);
+    color: var(--blue);
     padding: 10px 25px;
     border-radius: 5px;
     box-shadow: 1px 2px 3px#d3d3d3;
     font-size: 14px;
     transition: all 0.2s;
+    background-color: #fff;
 }
 
 #profile_review-match-button:hover {
-    background-color: #083e77a6;
+    background-color: var(--blue);
+    color: #fff;
 }
 
 @media(min-width: 1000px) {

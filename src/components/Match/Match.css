@@ -9,6 +9,7 @@
     padding: 10px;
     box-sizing: border-box;
     max-width: 530px;
+    color: hsl(0% 0% 45%);
 }
 
 .match_matched {
@@ -68,13 +69,13 @@
 
 .match_matched h1 {
     font-size: 25px;
-    color: var(--orange);
+    color: var(--blue);
     font-weight: 700;
     text-shadow: 1px 1px #d3d3d3;
 }
 
 .match_current-match-username {
-    color: var(--orange);
+    color: var(--blue);
     font-size: 25px;
     font-weight: 200;
 }
