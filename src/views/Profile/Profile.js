@@ -7,7 +7,6 @@ import {getUserInfo, deleteMatch, getNotifications} from '../../ducks/reducer';
 import {Link} from 'react-router-dom';
 import Match from '../../components/Match/Match';
 import Modal from '../../components/Modal/Modal';
-import Card from '../../reuse/Card/Card';
 import {ToastContainer, toast} from 'react-toastify';
 
 
@@ -96,10 +95,8 @@ class Profile extends Component {
                     <div className="profile_review-button-container">
                         <Link to="/createreview"><button id="profile_review-match-button">Review Previous Match</button></Link>
                     </div>
-                    <Card />
                     </div>
                    
-                    
                     <Footer />
                     {
                         this.state.modal ?
