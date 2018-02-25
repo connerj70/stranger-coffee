@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import './About.css';
-import background from '../../assets/compressed.jpg';
+import background from '../../assets/compressed-cut-about.jpg';
 
 class About extends Component {
     render() {
