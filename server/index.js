@@ -50,11 +50,8 @@ passport.use(new Auth0Strategy({
     // allowedConnections: ['github']
 }, function (accessToken, refreshToken, extraParams, profile, done) {
     const db = app.get('db');
-    console.log(profile.identities[0]);
     db.find_user([String(profile.identities[0].user_id)]).then(user => {
-        console.log("user from Auth0Strat", user)        //edit for our app
         if (user[0]) {
-            console.log(user[0]);
             // db.add_visit([String(user[0].user_id)])                             // edit for our app
             return done(null, user[0].auth_id)
         }
@@ -67,7 +64,6 @@ passport.use(new Auth0Strategy({
                 profile.emails[0].value
             ])
                 .then(user => {
-                    console.log(user);
                     db.find_user([String(user[0].auth_id)])
                     return done(null, user[0].auth_id)
                 })
@@ -81,7 +77,6 @@ app.get(`/auth/callback`, passport.authenticate(`auth0`, {
     failureRedirect: process.env.FAILURE_REDIRECT
 }))
 app.get(`/auth/me`, (req, res, next) => {
-    console.log("/auth/me user:", req.user)
     if (!req.user) {
         return res.status(400).send('user not found');
     }
@@ -122,7 +117,6 @@ var transporter = nodemailer.createTransport(smtpTransport({
 }));
 
 setInterval(function() {
-    console.log('fired');
     const db = app.get('db');
    
     db.select_upcoming_matches().then(resp => {
@@ -153,7 +147,6 @@ setInterval(function() {
         }
     });
     db.check_expired_matches().then(resp => {
-        console.log(resp);
         for(var i=0; i < resp.length; i++) {
             db.delete_expired_matches([resp[i].match_id]);
         }
@@ -165,7 +158,6 @@ passport.serializeUser(function (id, done) {
     return done(null, id);
 });
 passport.deserializeUser(function (id, done) {
-    console.log(id);
     app.get('db').find_user([id])
         .then(user => {
             return done(null, user[0]);

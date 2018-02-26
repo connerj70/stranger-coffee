@@ -15,7 +15,6 @@ class ReviewDetails extends Component {
 
     componentDidMount() {
         axios.get(`/api/review/${this.props.match.params.id}`).then(resp => {
-            console.log(resp.data);
             this.setState({
                 review: resp.data[0]
             });
@@ -23,7 +22,6 @@ class ReviewDetails extends Component {
     }
 
     render() {
-        console.log(this.state.review.stars)
         let starsToDisplay;
         if(this.state.review.stars) {
             starsToDisplay = functions.createStars(this.state.review.stars);

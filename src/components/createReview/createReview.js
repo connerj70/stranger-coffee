@@ -18,12 +18,10 @@ class createReview extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.user);
         axios.get('/api/previousmatches/' + this.props.user.id).then(resp => {
-            console.log(resp);
             this.setState({
                 previousMatch: resp.data[0]
-            }, ()=> console.log(this.state.previousMatch));
+            });
         });
     }
 
@@ -48,14 +46,8 @@ class createReview extends Component {
         });
             const reader = new FileReader()
             , file = files[0]
-            // , file = event.target.files[0]
         
         reader.onload = photo => {
-            // this.setState({
-            //     file: photo.target.result,
-            //     filename: file.name,
-            //     filetype: file.type
-            // });
             axios.post('/api/newreview', {name: files[0].name, preview: photo.target.result, fileType: files[0].type }).then(resp => {
                 let imageUrlsTemp = this.state.imageUrls.slice();
                 imageUrlsTemp.push(resp.data);
@@ -77,7 +69,6 @@ class createReview extends Component {
             idForUserTwo = this.state.previousMatch.user2_id;
         }
         axios.post('/api/createreview', {review: this.state.review, stars: this.state.stars, imageUrls: this.state.imageUrls, reviewerId: this.props.user.id, revieweeId: idForUserTwo}).then(resp => {
-            console.log(resp);
             if(resp.status === 200) {
                 toast.success("Review Created");
                 setTimeout(()=>this.props.history.push('/profile'), 2000);

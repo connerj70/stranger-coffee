@@ -15,7 +15,6 @@ class Notification extends Component {
         let notificationsToDisplay
         if(this.props.notifications) {
         notificationsToDisplay = this.props.notifications.map((value,i) => {
-            console.log(value);
             return (
                 <Link onClick={()=> this.props.deleteNotification(value.notification_id, this.props.user.id)} key={i} to='/profile'><div className="notification_notification-container">
                     <h1>MATCH</h1>

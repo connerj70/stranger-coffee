@@ -37,7 +37,6 @@ export function getCurrentMatch(id, city) {
 
 export function deleteMatch(id) {
   let match = axios.delete("/api/match/" + id).then(resp => {
-    console.log("RESPPPP", resp);
     return resp.data;
   });
   return {
@@ -58,11 +57,9 @@ export function getNotifications(id) {
 }
 
 export function deleteNotification(id, userId) {
-  console.log("USERID", userId);
   const notifications = axios
     .delete(`/api/notifications/${id}?userid=${userId}`)
     .then(resp => {
-      console.log("DELETE", resp);
       return resp.data;
     });
 

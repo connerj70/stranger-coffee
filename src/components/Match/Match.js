@@ -51,12 +51,10 @@ class Match extends Component {
   }
 
   deleteMatch() {
-    console.log("deleteMatch triggered");
     this.props.handleTrashClick();
   }
 
   render() {
-    console.log(this.state.match);
     return (
       <div className="match">
         {!this.props.currentMatch.location ? (
