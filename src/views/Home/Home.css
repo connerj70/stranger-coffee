@@ -13,12 +13,7 @@
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url("../../assets/people-drinking-coffee.jpg");
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/people-drinking-coffee.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -30,32 +25,31 @@
     color: #fff;
 }
 
-    .home_hero-captions>h2 {
-        font-size: 30px;
-        margin-bottom: 0.75rem;
-    }
+.home_hero-captions>h2 {
+    font-size: 30px;
+    margin-bottom: 0.75rem;
+}
 
-    .home_hero-captions>h3 {
-        font-size: 18px;
-    }
+.home_hero-captions>h3 {
+    font-size: 18px;
+}
 
-    .home_join-now-button {
-        background-color: var(--dark-yellow);
-        border: none;
-        border-radius: 5px;
-        padding: 10px 15px;
-        margin-top: 5px;
-        color: #fff;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.5s;
-    }
+.home_join-now-button {
+    background-color: var(--dark-yellow);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-top: 5px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.5s;
+}
 
-    .home_join-now-button:hover {
-        background-color: var(--blue);
-        color: var(--cream);
-
-    }
+.home_join-now-button:hover {
+    background-color: var(--blue);
+    color: var(--cream);
+}
 
 .home_heading {
     margin-top: 5.5rem;
@@ -116,7 +110,6 @@
 }
 
 @media(min-width: 800px) {
-
     .home_info-card-container {
         justify-content: space-between;
         font-size: 20px;
@@ -124,7 +117,6 @@
         margin: 80px auto;
         overflow-y: hidden;
     }
-
     .home_review-card-container {
         width: 60%;
         margin: 0 auto;
@@ -132,56 +124,45 @@
         flex-wrap: nowrap;
         justify-content: space-between;
     }
-
     .home_heading {
         width: 60%;
         margin: 210px auto;
         margin-bottom: 25px;
         font-size: 30px;
     }
-
     .home_hero-captions {
         width: 60%;
         margin: 30px auto;
     }
-
     .home_hero-captions>h2 {
         font-size: 55px;
         margin-top: 50px;
         margin-bottom: 0.75rem;
     }
-
     .home_hero-captions>h3 {
         font-size: 25px;
         margin-top: 20px;
     }
-
     .home_hero-container {
-      height: 60vh;
+        height: 60vh;
     }
-
     .less_heading {
         margin-top: 5rem;
         margin-bottom: -40px;
     }
-
     .home_join-now-button {
-       
         padding: 15px 40px;
         margin-top: 20px;
-       font-size: 20px;
+        font-size: 20px;
     }
-
     .fa-users {
         color: var(--dark-yellow);
         font-size: 40px;
     }
-    
     .fa-share-alt {
         color: var(--dark-yellow);
         font-size: 40px;
     }
-    
     .fa-smile {
         color: var(--dark-yellow);
         font-size: 40px;
@@ -190,16 +171,13 @@
 
 @media(min-width: 1800px) {
     .home_heading {
-       
         margin: 270px auto;
         margin-bottom: 40px;
     }
-
     .less_heading {
         margin-top: 50px;
         margin-bottom: 40px;
     }
-
     .home_info-card-container {
         margin-top: 60px;
     }
