@@ -81,20 +81,27 @@ class createReview extends Component {
         } else {
             idForUserTwo = this.state.previousMatch.user2_id;
         }
-        axios
-            .post("/api/createreview", {
-                review: this.state.review,
-                stars: this.state.stars,
-                imageUrls: this.state.imageUrls,
-                reviewerId: this.props.user.id,
-                revieweeId: idForUserTwo
-            })
-            .then(resp => {
-                if (resp.status === 200) {
-                    toast.success("Review Created");
-                    setTimeout(() => this.props.history.push("/profile"), 2000);
-                }
-            });
+        if (this.state.review) {
+            axios
+                .post("/api/createreview", {
+                    review: this.state.review,
+                    stars: this.state.stars,
+                    imageUrls: this.state.imageUrls,
+                    reviewerId: this.props.user.id,
+                    revieweeId: idForUserTwo
+                })
+                .then(resp => {
+                    if (resp.status === 200) {
+                        toast.success("Review Created");
+                        setTimeout(
+                            () => this.props.history.push("/profile"),
+                            2000
+                        );
+                    }
+                });
+        } else {
+            alert("Please leave a valid review");
+        }
     }
 
     render() {
