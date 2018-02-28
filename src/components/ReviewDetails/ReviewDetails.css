@@ -41,10 +41,17 @@
 
 .review-details_review-container {
     display: flex;
+    flex-direction: column;
     align-items: left;
 }
 
+.review-details_review-container h1 {
+    padding: 1vw 6vw;
+    font-weight: 700;
+}
+
 .review-details_review-container p {
+    width: 100%;
     padding: 1vw 6vw;
     margin: 0;
     margin-top: 10px;
@@ -62,7 +69,7 @@
 
 @media (min-width: 900px) {
     .review-details_inner-container {
-        width: 40%;
+        width: 35%;
         margin: 20px auto;
         min-height: 75vh;
         font-size: 20px;
@@ -80,9 +87,14 @@
         align-content: left;
     }
 
+    .review-details_review-container h1 {
+        padding: 0.5vw 0vw;
+    }
+
     .review-details_review-container p {
         padding: 0.5vw 0vw;
         margin: 0;
+        text-align: left;
     }
 
     .review-details_user-info-container {

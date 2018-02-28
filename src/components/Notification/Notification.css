@@ -1,7 +1,7 @@
 .notification {
     position: relative;
     top: 19px;
-    left: -80px;
+    left: -65px;
 }
 
 .notification_inner-container {
@@ -41,38 +41,3 @@
     font-weight: 700;
     font-size: 16px;
 }
-
-/* @media (min-width: 530px) {
-    .notification_inner-container {
-        left: 62%;
-        top: 5%;
-    }
-}
-
-@media (min-width: 800px) {
-    .notification_inner-container {
-        position: absolute;
-        left: 60%;
-        top: 6%;
-        width: 200px;
-        min-height: 250px;
-        background-color: whitesmoke;
-        border-radius: 5px;
-        color: var(--blue);
-        z-index: 5;
-        box-shadow: 1px 1px 4px grey;
-    }
-}
-
-@media (min-width: 1000px) {
-    .notification_inner-container {
-        left: 71%;
-        top: 5%;
-    }
-}
-
-@media (min-width: 1500px) {
-    .notification_inner-container {
-        left: 78%;
-    }
-} */

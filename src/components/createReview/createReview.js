@@ -108,7 +108,7 @@ class createReview extends Component {
         let picturesToDisplay = this.state.imageUrls.map((value, i) => {
             return (
                 <img
-                    alt="uploaded image"
+                    alt="user upload"
                     key={i}
                     className="create-review_picture"
                     src={value}
