@@ -1,3 +1,9 @@
+.notification {
+    position: relative;
+    top: 17px;
+    left: -80px;
+}
+
 .notification_inner-container {
     position: absolute;
     left: 39%;
@@ -36,14 +42,14 @@
     font-size: 16px;
 }
 
-@media(min-width: 530px) {
+/* @media (min-width: 530px) {
     .notification_inner-container {
         left: 62%;
         top: 5%;
     }
 }
 
-@media(min-width: 800px) {
+@media (min-width: 800px) {
     .notification_inner-container {
         position: absolute;
         left: 60%;
@@ -58,15 +64,15 @@
     }
 }
 
-@media(min-width: 1000px) {
+@media (min-width: 1000px) {
     .notification_inner-container {
         left: 71%;
         top: 5%;
     }
 }
 
-@media(min-width: 1500px) {
+@media (min-width: 1500px) {
     .notification_inner-container {
         left: 78%;
     }
-}
+} */
