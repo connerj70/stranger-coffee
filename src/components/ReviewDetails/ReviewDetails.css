@@ -52,7 +52,7 @@
     font-size: 16px;
 }
 
-@media(min-width: 600px) {
+@media (min-width: 600px) {
     .review-details_inner-container {
         width: 80%;
         margin: 20px auto;
@@ -60,28 +60,32 @@
     }
 }
 
-@media(min-width: 900px) {
+@media (min-width: 900px) {
     .review-details_inner-container {
-        width: 60%;
+        width: 40%;
         margin: 20px auto;
         min-height: 75vh;
         font-size: 20px;
     }
 
     .review-details_star-container {
-        padding: 0.5vw 6vw;
+        padding: 0.5vw 0vw;
         display: flex;
         align-content: left;
     }
 
     .review-details_star-container {
-        padding: 0.5vw 6vw;
+        padding: 0.5vw 0vw;
         display: flex;
         align-content: left;
     }
 
     .review-details_review-container p {
-        padding: 0.5vw 6vw;
+        padding: 0.5vw 0vw;
         margin: 0;
+    }
+
+    .review-details_user-info-container {
+        padding: 1vw 0vw;
     }
 }
