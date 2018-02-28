@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./Footer.css";
 
 export default function Footer(props) {
@@ -8,10 +8,10 @@ export default function Footer(props) {
             <div>
                 <span>Terms</span>
                 <span>Privacy</span>
-                <i className="fab fa-facebook-f"></i>
-                <i className="fab fa-twitter"></i>
-                <i className="fab fa-instagram" aria-hidden="true"></i>
+                <i className="fab fa-facebook-f" />
+                <i className="fab fa-twitter" />
+                <i className="fab fa-instagram" aria-hidden="true" />
             </div>
         </div>
-    )
+    );
 }

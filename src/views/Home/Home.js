@@ -34,9 +34,8 @@ class Home extends Component {
             imageUrl = defaultImage;
           }
           return (
-            <Link to={`/reviewdetails/${value.review_id}`}>
+            <Link key={i} to={`/reviewdetails/${value.review_id}`}>
               <ReviewCard
-                key={i}
                 backgroundImage={imageUrl}
                 stars={value.stars}
                 text={value.review}

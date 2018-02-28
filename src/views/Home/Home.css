@@ -9,11 +9,12 @@
 
 .home_hero-container {
     width: 100%;
-    height: 30vh;
+    height: 38vh;
     position: absolute;
     top: 0;
     z-index: -1;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/people-drinking-coffee.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../../assets/people-drinking-coffee.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -25,12 +26,12 @@
     color: #fff;
 }
 
-.home_hero-captions>h2 {
+.home_hero-captions > h2 {
     font-size: 30px;
     margin-bottom: 0.75rem;
 }
 
-.home_hero-captions>h3 {
+.home_hero-captions > h3 {
     font-size: 18px;
 }
 
@@ -52,7 +53,7 @@
 }
 
 .home_heading {
-    margin-top: 5.5rem;
+    margin-top: 7rem;
     color: #484848;
     margin-bottom: 2rem;
     font-size: 22px;
@@ -109,7 +110,13 @@
     margin-top: 50px;
 }
 
-@media(min-width: 800px) {
+@media (max-width: 375px) {
+    .home_heading {
+        margin-top: 3.8rem;
+    }
+}
+
+@media (min-width: 800px) {
     .home_info-card-container {
         justify-content: space-between;
         font-size: 20px;
@@ -126,7 +133,7 @@
     }
     .home_heading {
         width: 60%;
-        margin: 210px auto;
+        margin: 130px auto;
         margin-bottom: 25px;
         font-size: 30px;
     }
@@ -134,12 +141,12 @@
         width: 60%;
         margin: 30px auto;
     }
-    .home_hero-captions>h2 {
+    .home_hero-captions > h2 {
         font-size: 55px;
         margin-top: 50px;
         margin-bottom: 0.75rem;
     }
-    .home_hero-captions>h3 {
+    .home_hero-captions > h3 {
         font-size: 25px;
         margin-top: 20px;
     }
@@ -169,7 +176,7 @@
     }
 }
 
-@media(min-width: 1800px) {
+@media (min-width: 1800px) {
     .home_heading {
         margin: 270px auto;
         margin-bottom: 40px;
