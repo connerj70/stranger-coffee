@@ -114,7 +114,7 @@ app.get("/api/review/:id", reviewCtrl.getReview);
 app.delete("/api/match/:id", matchCtrl.deleteMatch);
 
 //
-
+console.log(process.env.NODEMAILER_PASS);
 var transporter = nodemailer.createTransport(
     smtpTransport({
         service: "gmail",
@@ -143,7 +143,7 @@ setInterval(function() {
 
                 transporter.sendMail(mailOptions, (error, info) => {
                     if (error) {
-                        return console.log(error);
+                        return console.log("ERROR", error);
                     }
                     console.log("Message sent: %s", info.messageId);
                     // Preview only available when sending through an Ethereal account
@@ -171,11 +171,20 @@ setInterval(function() {
         }
     });
     db.check_expired_matches().then(resp => {
+        console.log("expired matches", resp);
         for (var i = 0; i < resp.length; i++) {
-            db.delete_expired_matches([resp[i].match_id]);
+            db.delete_expired_matches([
+                resp[i].match_id,
+                resp[i].user1_id,
+                resp[i].user2_id,
+                resp[i].location,
+                resp[i].creation_time,
+                resp[i].date,
+                resp[i].pending
+            ]);
         }
     });
-}, 8.64e7);
+}, 5000);
 //8.64e+7
 
 passport.serializeUser(function(id, done) {
