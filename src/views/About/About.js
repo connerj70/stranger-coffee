@@ -6,18 +6,6 @@ import background from "../../assets/Webp.net-resizeimage.jpg";
 import ReactGA from "react-ga";
 
 class About extends Component {
-    componentDidMount() {
-        // Avoid double tracking
-        if (typeof window === "undefined") return;
-        this.sendPageView(this.context.router.history.location);
-        this.context.router.history.listen(this.sendPageView);
-    }
-
-    sendPageView(location) {
-        ReactGA.set({ page: location.pathname });
-        ReactGA.pageview(location.pathname);
-    }
-
     render() {
         return (
             <div className="about-container">
