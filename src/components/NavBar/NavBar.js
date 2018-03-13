@@ -8,9 +8,6 @@ import {
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Notification from "../Notification/Notification";
-import ReactGA from "react-ga";
-ReactGA.initialize("UA-000000-01");
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 class NavBar extends Component {
     constructor(props) {
@@ -26,10 +23,6 @@ class NavBar extends Component {
     }
 
     toggleOpen() {
-        ReactGA.event({
-            category: "User",
-            action: "Created an Account"
-        });
         this.setState(prevState => {
             return {
                 open: !prevState.open
